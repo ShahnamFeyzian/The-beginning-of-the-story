@@ -1,0 +1,84 @@
+GraphicsWindow.Title = "BASICE PAINT"
+
+GraphicsWindow.MouseDown = MouseDown
+GraphicsWindow.MouseMove = MouseMove
+GraphicsWindow.KeyDown = KeyDown
+givecolor()
+givePW()
+
+
+
+Sub MouseDown
+  X1 = GraphicsWindow.MouseX
+  Y1 = GraphicsWindow.MouseY
+EndSub
+
+
+
+Sub MouseMove
+  X2 = GraphicsWindow.MouseX
+  Y2 = GraphicsWindow.MouseY
+  If (Mouse.IsLeftButtonDown) Then
+    GraphicsWindow.DrawLine(X1,Y1,X2,Y2)
+  EndIf
+  X1 = X2
+  Y1 = Y2
+EndSub
+
+
+
+Sub KeyDown
+  pw = GraphicsWindow.PenWidth
+  If (GraphicsWindow.LastKey = "Up") Then
+    pw = pw + 1
+    pw = Math.Min(pw,10)
+  ElseIf (GraphicsWindow.LastKey = "Down") Then
+    pw = pw - 1
+    pw = Math.Max(pw,1)
+  EndIf
+  GraphicsWindow.PenWidth = pw
+  givePW()
+  'SET COLOR
+  If GraphicsWindow.LastKey = "R" Then
+    color = "red"
+  ElseIf GraphicsWindow.LastKey = "B" Then
+    color = "blue"
+  ElseIf GraphicsWindow.LastKey = "Y" Then
+    color = "yellow"
+  ElseIf GraphicsWindow.LastKey = "G" Then
+    color = "green"
+  ElseIf GraphicsWindow.LastKey = "M" Then
+    color = "magenta"
+  ElseIf GraphicsWindow.LastKey = "D" Then
+    color = "black"
+  ElseIf GraphicsWindow.LastKey = "P" Then
+    color = "pink"
+  ElseIf GraphicsWindow.LastKey = "Space" Then
+    color = GraphicsWindow.GetRandomColor()  
+  EndIf
+  GraphicsWindow.PenColor = color
+  givecolor()
+EndSub
+
+
+
+c = Shapes.AddText("")
+Shapes.Move(c,10,10)
+givecolor()
+
+w = Shapes.AddText("")
+Shapes.Move(w,10,30)
+givePW()
+
+Sub givecolor
+  Shapes.SetText(c,"Pen color : ")
+  GraphicsWindow.BrushColor = GraphicsWindow.PenColor
+  r = Shapes.AddRectangle(20,5)
+  Shapes.Move(r,80,17)
+EndSub
+
+Sub givePW
+  Shapes.SetText(w,"Pen Widdth : " + GraphicsWindow.PenWidth)
+EndSub  
+  
+  

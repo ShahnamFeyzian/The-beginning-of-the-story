@@ -1,0 +1,98 @@
+GraphicsWindow.KeyDown = keydown
+Turtle.Speed = 10
+Turtle.X = 800
+Turtle.Y = 450
+Turtle.Show()
+givecolor()
+givePW()
+givpenS()
+
+
+penstatus = "down"
+Sub keydown
+  'MOVE
+  key = GraphicsWindow.LastKey
+  If key = "Up" Then
+    Turtle.Move(1)
+  ElseIf key = "Down" Then
+    Turtle.Move(-1)
+  ElseIf key = "Right" Then
+    Turtle.Turn(5)
+  ElseIf key = "Left" Then
+    Turtle.Turn(-5)
+  EndIf
+  
+  'PEN WIDTH
+  pw = GraphicsWindow.PenWidth
+  If (GraphicsWindow.LastKey = "OemPlus") Then
+    pw = pw + 1
+    pw = Math.Min(pw,10)
+  ElseIf (GraphicsWindow.LastKey = "OemMinus") Then
+    pw = pw - 1
+    pw = Math.Max(pw,1)
+  EndIf
+  GraphicsWindow.PenWidth = pw
+  givePW()
+  
+  'SET COLOR
+  If GraphicsWindow.LastKey = "R" Then
+    color = "red"
+  ElseIf GraphicsWindow.LastKey = "B" Then
+    color = "blue"
+  ElseIf GraphicsWindow.LastKey = "Y" Then
+    color = "yellow"
+  ElseIf GraphicsWindow.LastKey = "G" Then
+    color = "green"
+  ElseIf GraphicsWindow.LastKey = "M" Then
+    color = "magenta"
+  ElseIf GraphicsWindow.LastKey = "D" Then
+    color = "black"
+  ElseIf GraphicsWindow.LastKey = "P" Then
+    color = "pink"
+  ElseIf GraphicsWindow.LastKey = "Space" Then
+    color = GraphicsWindow.GetRandomColor()  
+  EndIf
+  GraphicsWindow.PenColor = color
+  givecolor()
+  'PEN UP & PEN DOWN
+  If penstatus = "down" Then
+    If key = "Return" Then
+      Turtle.PenUp()
+      penstatus = "up"
+      givpenS()
+    EndIf
+  Else
+    If key = "Return" Then
+      Turtle.PenDown()
+      penstatus = "down"
+      givpenS()
+    EndIf
+  EndIf
+EndSub
+
+c = Shapes.AddText("")
+Shapes.Move(c,10,10)
+givecolor()
+
+w = Shapes.AddText("")
+Shapes.Move(w,10,30)
+givePW()
+
+p = Shapes.AddText("")
+Shapes.Move(p,10,50)
+givpenS()
+
+Sub givpenS
+  Shapes.SetText(p,"Pen Status : " + penstatus)
+EndSub
+
+Sub givecolor
+  Shapes.SetText(c,"Pen color : ")
+  GraphicsWindow.BrushColor = GraphicsWindow.PenColor
+  GraphicsWindow.FillRectangle(80,17,20,5)
+EndSub
+
+Sub givePW
+  Shapes.SetText(w,"Pen Widdth : " + GraphicsWindow.PenWidth)
+EndSub    
+    
