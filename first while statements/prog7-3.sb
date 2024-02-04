@@ -1,0 +1,9 @@
+n=1
+While (n<=10)
+  TextWindow.WriteLine(n)
+  n=n+1
+EndWhile
+TextWindow.WriteLine("")
+For k = 1 To 10
+  TextWindow.WriteLine(k)
+EndFor
