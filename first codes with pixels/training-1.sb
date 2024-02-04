@@ -1,0 +1,14 @@
+W = 256*4
+H = 300
+
+GraphicsWindow.Width = W
+GraphicsWindow.Height = H
+
+For x = 1 To W
+  gb = 256 - (x / 4)
+  c = GraphicsWindow.GetColorFromRGB(255,gb,gb)
+  For y = 1 To H
+    GraphicsWindow.SetPixel(x,y,c)
+  EndFor
+EndFor
+  

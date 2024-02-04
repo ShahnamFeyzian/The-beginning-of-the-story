@@ -1,0 +1,13 @@
+W = 200
+H = 100
+
+GraphicsWindow.Width = W
+GraphicsWindow.Height = H
+
+For x = 1 To W
+  For y = 1 To H
+    c = GraphicsWindow.GetRandomColor()
+  GraphicsWindow.SetPixel(x,y,c)  
+  EndFor
+EndFor
+  

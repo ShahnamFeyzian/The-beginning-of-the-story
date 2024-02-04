@@ -1,0 +1,7 @@
+GraphicsWindow.Width = 200
+GraphicsWindow.Height = 200
+GraphicsWindow.SetPixel(100,100,"blue")
+GraphicsWindow.SetPixel(99,100,"blue")
+GraphicsWindow.SetPixel(100,99,"blue")
+GraphicsWindow.SetPixel(101,100,"blue")
+GraphicsWindow.SetPixel(100,101,"blue")

@@ -1,0 +1,48 @@
+TextWindow.Write("Enter a number: ")
+N = TextWindow.ReadNumber()
+
+
+GraphicsWindow.Width = 600
+GraphicsWindow.Height = 600
+GraphicsWindow.BackgroundColor = "black"
+
+'point A
+xA = 50
+yA = 550
+
+'point B
+xB = 550
+yB = 550
+
+'point C
+xC = 300
+yC = 50
+
+GraphicsWindow.SetPixel(xA,yA,"white")
+GraphicsWindow.SetPixel(xB,yB,"white")
+GraphicsWindow.SetPixel(xC,yC,"white")
+
+X = xA
+Y = yA
+
+For i = 1 To N
+  m=Math.GetRandomNumber(3)
+  If (m=1) Then
+    ux = xA
+    uy = yA
+  EndIf
+  If (m=2) Then
+    ux = xB
+    uy = yB
+  EndIf
+  If (m=3) Then
+    ux = xC
+    uy = yC
+  EndIf
+  X = (ux + X)/2
+  Y = (uy + Y)/2
+  GraphicsWindow.SetPixel(X,Y,"gold")
+EndFor
+
+
+  
