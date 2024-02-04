@@ -1,0 +1,22 @@
+While 1=1
+i = Math.GetRandomNumber(4)
+If i = 1 Then
+  Sound.PlayBellRing()
+  title = "BellRing"
+ElseIf i = 2 Then
+  Sound.PlayChime()
+  title = "Chime"
+Elseif i = 3 Then
+  Sound.PlayChimes()
+  title = "Chimes"
+Else
+  Sound.PlayClick()
+  title = "Click"
+EndIf
+
+GraphicsWindow.Title = "play " + title
+
+Program.Delay(3000)
+
+EndWhile
+  

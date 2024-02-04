@@ -1,0 +1,2 @@
+Sound.PlayMusic("o1 l26 c d e f g a b o2 c d e f g a b o3 c d e f g a b o4 c d e f g a b o5 c d e f g a b o6 c d e f g a b o7 c d e f g a b o8 c ")
+GraphicsWindow.Show()

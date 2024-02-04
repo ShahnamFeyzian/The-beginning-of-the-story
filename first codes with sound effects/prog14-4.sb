@@ -1,0 +1,3 @@
+start:
+Sound.PlayMusic("O5 C8 C8 G8 G8 A8 A8 G4 F8 F8 E8 E8 D8 D8 C4")
+Goto start
