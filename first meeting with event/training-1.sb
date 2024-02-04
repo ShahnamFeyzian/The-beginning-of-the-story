@@ -1,0 +1,38 @@
+GraphicsWindow.MouseDown = fill
+GraphicsWindow.KeyDown = setcolor
+
+Sub fill
+  r = 20
+  x = GraphicsWindow.MouseX - r
+  y = GraphicsWindow.MouseY - r
+  If (Mouse.IsLeftButtonDown) Then
+    GraphicsWindow.FillEllipse(x,y,2*r,2*r)
+  ElseIf (Mouse.IsRightButtonDown) Then
+    GraphicsWindow.FillRectangle(x,y,2*r,2*r)
+  EndIf
+EndSub
+
+Sub setcolor
+  If GraphicsWindow.LastKey = "R" Then
+    color = "red"
+  ElseIf GraphicsWindow.LastKey = "B" Then
+    color = "blue"
+  ElseIf GraphicsWindow.LastKey = "Y" Then
+    color = "yellow"
+  ElseIf GraphicsWindow.LastKey = "G" Then
+    color = "green"
+  ElseIf GraphicsWindow.LastKey = "M" Then
+    color = "magenta"
+  ElseIf GraphicsWindow.LastKey = "D" Then
+    color = "black"
+  ElseIf GraphicsWindow.LastKey = "P" Then
+    color = "pink"
+  ElseIf GraphicsWindow.LastKey = "Space" Then
+    color = GraphicsWindow.GetRandomColor()  
+EndIf
+  GraphicsWindow.BrushColor = color
+EndSub
+
+    
+  
+  

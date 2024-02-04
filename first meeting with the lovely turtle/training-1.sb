@@ -1,0 +1,33 @@
+TextWindow.Write("Enter a number of tedad azla: ")
+TA = TextWindow.ReadNumber()
+TextWindow.Write("Enter a number of tedad ashkal: ")
+T = TextWindow.ReadNumber()
+
+GraphicsWindow.Title = "shahnams program"
+GraphicsWindow.Width = 1600
+GraphicsWindow.Height = 900
+GraphicsWindow.BackgroundColor = "steelblue"
+GraphicsWindow.PenWidth = (Math.GetRandomNumber (3) + 1)
+GraphicsWindow.DrawLine (200,700,1400,700)
+GraphicsWindow.PenColor = GraphicsWindow.GetRandomColor()
+
+Turtle.X = 200
+Turtle.Y = 700
+Turtle.Speed = 10
+Turtle.TurnLeft()
+
+For i = 1 To T
+  For j = 1 To (TA-1)
+    Turtle.PenDown()
+    Turtle.Turn(360/TA)
+    Turtle.Move(1200/(T*2-1))
+  EndFor
+  Turtle.PenUp()
+  Turtle.Turn(360/TA+180)
+  Turtle.Move(1200/(T*2-1))
+  Turtle.Turn(180)
+EndFor
+
+Turtle.Hide()
+  
+    
