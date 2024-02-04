@@ -1,0 +1,23 @@
+TextWindow.Write("Enter a number: ")
+
+N = TextWindow.ReadNumber()
+W = 1000
+H = 600
+
+GraphicsWindow.Title = "SHAHNAM"
+GraphicsWindow.BackgroundColor = "steelblue"
+GraphicsWindow.CanResize = 0
+GraphicsWindow.Width = W
+GraphicsWindow.Height = H
+GraphicsWindow.PenColor = "black"
+GraphicsWindow.PenWidth = 3
+
+For i = 1 To N
+  X = i * W / N
+  Y = (N - i + 1) * H / N
+  GraphicsWindow.DrawLine(X,0,0,Y)
+  X = (N - i) * W / N
+  Y = (i - 1) * H / N
+  GraphicsWindow.DrawLine(W,Y,X,H) 
+EndFor
+ 
