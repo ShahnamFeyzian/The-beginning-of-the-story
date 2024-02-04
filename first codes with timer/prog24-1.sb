@@ -1,0 +1,24 @@
+Timerstatus = "Active"
+GraphicsWindow.Title = "Timer Example - Status :" + Timerstatus
+Timer.Interval = 1000
+Timer.Tick = ChengColor 
+GraphicsWindow.MouseDown = MOuseDown
+
+Sub ChengColor
+  GraphicsWindow.BackgroundColor = GraphicsWindow.GetRandomColor()
+EndSub
+
+Sub MOuseDown
+  If Timerstatus = "Active" Then
+    Timer.Pause()
+    Timerstatus = "Inactive"
+  Else
+    Timer.Resume()
+    Timerstatus = "Active"
+  EndIf
+  GraphicsWindow.Title = "Timer Example - Status :" + Timerstatus
+EndSub
+
+
+
+

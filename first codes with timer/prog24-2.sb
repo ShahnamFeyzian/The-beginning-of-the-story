@@ -1,0 +1,20 @@
+GraphicsWindow.Show()
+GraphicsWindow.CanResize = 0
+GraphicsWindow.Width = 300
+GraphicsWindow.Height = 80
+GraphicsWindow.BackgroundColor = "black"
+GraphicsWindow.FontSize = 50
+GraphicsWindow.FontBold = 0
+GraphicsWindow.BrushColor = "lime"
+
+t = Shapes.AddText("")
+Shapes.Move(t,10,10)
+time()
+
+Timer.Interval = 1000
+Timer.Tick = time
+
+Sub time
+  Shapes.SetText(t,clock.Time)
+EndSub
+  
