@@ -1,0 +1,314 @@
+GraphicsWindow.Show()
+GraphicsWindow.Width = 1260
+GraphicsWindow.Height = 760
+GraphicsWindow.BackgroundColor = GraphicsWindow.GetColorFromRGB(252,113,57)
+GraphicsWindow.Title = "DOOZ"
+GraphicsWindow.CanResize = 0
+
+
+GraphicsWindow.PenWidth = 5
+GraphicsWindow.DrawRectangle(50,50,1170,630)
+GraphicsWindow.DrawRectangle(245,155,780,420)
+GraphicsWindow.DrawRectangle(440,260,390,210)
+GraphicsWindow.DrawLine(50,50,440,260)
+GraphicsWindow.DrawLine(635,50,635,260)
+GraphicsWindow.DrawLine(1220,50,830,260)
+GraphicsWindow.DrawLine(50,365,440,365)
+GraphicsWindow.DrawLine(50,680,440,470)
+GraphicsWindow.DrawLine(635,680,635,470)
+GraphicsWindow.DrawLine(1220,365,830,365)
+GraphicsWindow.DrawLine(1220,680,830,470)
+
+For i = 1 To 24
+  If i <= 3 Then
+    btn[i] = Controls.AddButton("",585*(i-1)+30,30)
+  ElseIf i <= 6 then
+    btn[i] = Controls.AddButton("",225+390*(i-4),135)
+  Elseif i <= 9 then
+    btn[i] = Controls.AddButton("",420+195*(i-7),240)
+  Elseif i <= 12 then
+    btn[i] = Controls.AddButton("",195*(i-10)+30,345)
+  Elseif i <= 15 then
+    btn[i] = Controls.AddButton("",810+195*(i-13),345)
+  Elseif i <= 18 then
+    btn[i] = Controls.AddButton("",420+195*(i-16),450)
+  Elseif i <= 21 then
+    btn[i] = Controls.AddButton("",225+390*(i-19),555)
+  Else
+    btn[i] = Controls.AddButton("",585*(i-22)+30,660)
+  EndIf
+  Controls.SetSize(btn[i],40,40)
+EndFor
+GraphicsWindow.FontSize = 15
+restarbtn = Controls.AddButton("Restart",1000,730)
+
+Controls.ButtonClicked = BC
+
+Bwins = 0
+Gwins = 0
+
+GraphicsWindow.BrushColor = 0
+GraphicsWindow.FontSize =20
+status = Shapes.AddText("")
+Shapes.Move(status,580,730)
+natige = Shapes.AddText("")
+Shapes.Move(natige,200,730)
+
+
+restar()
+showstatus()
+Sub BC
+  lbc = Controls.LastClickedButton
+  If lbc = restarbtn Then
+    restar()
+    Goto End
+  EndIf
+  If winer = "" Then
+    setplayer()
+    show()
+    End :
+    getstatus()
+    showstatus()
+  EndIf
+EndSub
+
+
+
+Sub show
+  For i = 1 To 24
+    If lbc = btn[i] Then
+      If player = "green" then
+        GraphicsWindow.BrushColor = "blue"
+      Else
+        GraphicsWindow.BrushColor = "lime"
+      EndIf
+      Controls.HideControl(btn[i])
+      m[i] = Shapes.AddEllipse(100,100)
+      If i <= 3 Then
+        w = 585*(i-1)
+        h = 0
+      ElseIf i <= 6 then
+        w = 195+390*(i-4)
+        h = 105
+      ElseIf i <= 9 then
+        w = 390+195*(i-7)
+        h = 210
+      ElseIf i <= 12 then
+        w = 195*(i-10)
+        h = 315
+      ElseIf i <= 15 then
+        w = 780+195*(i-13)
+        h = 315
+      ElseIf i <= 18 then
+        w = 390+195*(i-16)
+        h = 420
+      ElseIf i <= 21 then
+        w = 195+390*(i-19)
+        h = 525
+      ElseIf i <= 24 then
+        w = 585*(i-22)
+        h = 630
+      EndIf
+      Shapes.Animate(m[i],w,h,500)
+      Sound.PlayClick()
+    EndIf
+  EndFor
+EndSub
+
+
+
+Sub setplayer 
+  Controls.SetButtonCaption(lbc,player)
+  If player = "blue" Then
+    player = "green"
+  Else
+    player = "blue"
+  EndIf
+EndSub
+
+
+
+Sub getstatus
+  winer = "draw"
+  For i = 1 To 24
+    c[i] = Controls.GetButtonCaption(btn[i])
+    If c[i] = "" Then
+      winer = ""
+    EndIf
+  EndFor
+  If c[1] = "blue" And c[2] = "blue" And c[3] = "blue" Then
+    winer = "blue"
+  EndIf
+  If c[4] = "blue" And c[5] = "blue" And c[6] = "blue" Then
+    winer = "blue"
+  EndIf    
+  If c[7] = "blue" And c[8] = "blue" And c[9] = "blue" Then
+    winer = "blue"
+  EndIf    
+  If c[10] = "blue" And c[11] = "blue" And c[12] = "blue" Then
+    winer = "blue"
+  EndIf
+  If c[13] = "blue" And c[14] = "blue" And c[15] = "blue" Then
+    winer = "blue"
+  EndIf
+  If c[16] = "blue" And c[17] = "blue" And c[18] = "blue" Then
+    winer = "blue"
+  EndIf
+  If c[19] = "blue" And c[20] = "blue" And c[21] = "blue" Then
+    winer = "blue"
+  EndIf
+  If c[22] = "blue" And c[23] = "blue" And c[24] = "blue" Then
+    winer = "blue"
+  EndIf
+  If c[1] = "blue" And c[10] = "blue" And c[22] = "blue" Then
+    winer = "blue"
+  EndIf
+  If c[4] = "blue" And c[11] = "blue" And c[19] = "blue" Then
+    winer = "blue"
+  EndIf
+  If c[7] = "blue" And c[12] = "blue" And c[16] = "blue" Then
+    winer = "blue"
+  EndIf
+  If c[2] = "blue" And c[5] = "blue" And c[8] = "blue" Then
+    winer = "blue"
+  EndIf
+  If c[9] = "blue" And c[13] = "blue" And c[18] = "blue" Then
+    winer = "blue"
+  EndIf
+  If c[6] = "blue" And c[14] = "blue" And c[21] = "blue" Then
+    winer = "blue"
+  EndIf
+  If c[3] = "blue" And c[15] = "blue" And c[24] = "blue" Then
+    winer = "blue"
+  EndIf
+  If c[17] = "blue" And c[20] = "blue" And c[23] = "blue" Then
+    winer = "blue"
+  EndIf
+  If c[1] = "blue" And c[4] = "blue" And c[7] = "blue" Then
+    winer = "blue"
+  EndIf
+  If c[22] = "blue" And c[19] = "blue" And c[16] = "blue" Then
+    winer = "blue"
+  EndIf
+  If c[24] = "blue" And c[21] = "blue" And c[18] = "blue" Then
+    winer = "blue"
+  EndIf
+  If c[3] = "blue" And c[6] = "blue" And c[9] = "blue" Then
+    winer = "blue"
+  EndIf
+  If c[1] = "green" And c[2] = "green" And c[3] = "green" Then
+    winer = "green"
+  EndIf
+  If c[4] = "green" And c[5] = "green" And c[6] = "green" Then
+    winer = "green"
+  EndIf    
+  If c[7] = "green" And c[8] = "green" And c[9] = "green" Then
+    winer = "green"
+  EndIf    
+  If c[10] = "green" And c[11] = "green" And c[12] = "green" Then
+    winer = "green"
+  EndIf
+  If c[13] = "green" And c[14] = "green" And c[15] = "green" Then
+    winer = "green"
+  EndIf
+  If c[16] = "green" And c[17] = "green" And c[18] = "green" Then
+    winer = "green"
+  EndIf
+  If c[19] = "green" And c[20] = "green" And c[21] = "green" Then
+    winer = "green"
+  EndIf
+  If c[22] = "green" And c[23] = "green" And c[24] = "green" Then
+    winer = "green"
+  EndIf
+  If c[1] = "green" And c[10] = "green" And c[22] = "green" Then
+    winer = "green"
+  EndIf
+  If c[4] = "green" And c[11] = "green" And c[19] = "green" Then
+    winer = "green"
+  EndIf
+  If c[7] = "green" And c[12] = "green" And c[16] = "green" Then
+    winer = "green"
+  EndIf
+  If c[2] = "green" And c[5] = "green" And c[8] = "green" Then
+    winer = "green"
+  EndIf
+  If c[9] = "green" And c[13] = "green" And c[18] = "green" Then
+    winer = "green"
+  EndIf
+  If c[6] = "green" And c[14] = "green" And c[21] = "green" Then
+    winer = "green"
+  EndIf
+  If c[3] = "green" And c[15] = "green" And c[24] = "green" Then
+    winer = "green"
+  EndIf
+  If c[17] = "green" And c[20] = "green" And c[23] = "green" Then
+    winer = "green"
+  EndIf
+  If c[1] = "green" And c[4] = "green" And c[7] = "green" Then
+    winer = "green"
+  EndIf
+  If c[22] = "green" And c[19] = "green" And c[16] = "green" Then
+    winer = "green"
+  EndIf
+  If c[24] = "green" And c[21] = "green" And c[18] = "green" Then
+    winer = "green"
+  EndIf
+  If c[3] = "green" And c[6] = "green" And c[9] = "green" Then
+    winer = "green"
+  EndIf
+  If winer = "blue" Then
+    Bwins = Bwins + 1
+  ElseIf winer = "green" then
+    Gwins = Gwins + 1
+  EndIf
+EndSub
+
+
+
+Sub showstatus
+  If winer = "" Then
+    Shapes.SetText(status,"it is " + player + "'s turn")
+  ElseIf winer = "draw" then
+    Shapes.SetText(status,"Do'nt hav any winer!")
+    Sound.PlayChimes()
+  Else
+    Shapes.SetText(status,"Player " + winer + " wins")
+    Sound.PlayChime()
+  EndIf
+  Shapes.SetText(natige,"Blue win(s) : " + Bwins + "   Green win(s) : " + Gwins )
+EndSub
+
+
+
+nobat = 1
+Sub restar
+  nobat = -nobat
+  For i = 1 To 24
+    Shapes.Remove(m[i])
+    Controls.ShowControl(btn[i])
+    Controls.SetButtonCaption(btn[i],"")
+  EndFor
+  If nobat = -1 Then
+    player = "blue"
+  Else
+    player = "green"
+  EndIf
+  winer = ""
+EndSub
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
