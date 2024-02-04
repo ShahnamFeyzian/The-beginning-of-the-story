@@ -1,0 +1,168 @@
+GraphicsWindow.CanResize = 0
+GraphicsWindow.Title = "tic-toc-toe"
+GraphicsWindow.Width = 300
+GraphicsWindow.Height = 400
+GraphicsWindow.PenWidth = 9
+GraphicsWindow.BrushColor = 0
+GraphicsWindow.DrawLine(100,10,100,290)
+GraphicsWindow.DrawLine(195,10,195,290)
+GraphicsWindow.DrawLine(10,100,290,100)
+GraphicsWindow.DrawLine(10,195,290,195)
+
+
+
+tedad = 0
+For i = 1 To 3
+  For j = 1 To 3
+    tedad = tedad + 1
+    btn[tedad] = Controls.AddButton("",15+95*(j-1),15+95*(i-1))
+    Controls.SetSize(btn[tedad],75,75)
+  EndFor
+EndFor
+GraphicsWindow.FontSize = 20
+RS = Controls.AddButton("Restart",115,350)
+
+status = Shapes.AddText("")
+Shapes.Move(status,80,300)
+
+Controls.ButtonClicked = BC
+
+
+
+restart()
+checkwiner()
+getstatus()
+Sub BC
+  getcolor()
+  checkwiner()
+  If B = RS Then
+    restart()
+  EndIf
+  getstatus()
+EndSub
+
+
+
+Sub checkwiner
+  winer = "draw"
+  For i = 1 To 9
+    c[i] = Controls.GetButtonCaption(btn[i])
+    If c[i] = "" Then
+      winer = ""
+    EndIf
+  EndFor
+  'FIND WINER
+  If c[1]="X" And c[2]="X" And c[3]="X" Then
+    winer = "X"
+  EndIf
+  If c[4]="X" And c[5]="X" And c[6]="X" Then
+    winer = "X"
+  EndIf
+  If c[7]="X" And c[8]="X" And c[9]="X" Then
+    winer = "X"
+  EndIf
+  If c[1]="X" And c[4]="X" And c[7]="X" Then
+    winer = "X"
+  EndIf
+  If c[2]="X" And c[5]="X" And c[8]="X" Then
+    winer = "X"
+  EndIf
+  If c[3]="X" And c[6]="X" And c[9]="X" Then
+    winer = "X"
+  EndIf
+  If c[1]="X" And c[5]="X" And c[9]="X" Then
+    winer = "X"
+  EndIf
+  If c[3]="X" And c[5]="X" And c[7]="X" Then
+    winer = "X"
+  EndIf
+  If c[1]="O" And c[2]="O" And c[3]="O" Then
+    winer = "O"
+  EndIf
+  If c[4]="O" And c[5]="O" And c[6]="O" Then
+    winer = "O"
+  EndIf
+  If c[7]="O" And c[8]="O" And c[9]="O" Then
+    winer = "O"
+  EndIf
+  If c[1]="O" And c[4]="O" And c[7]="O" Then
+    winer = "O"
+  EndIf
+  If c[2]="O" And c[5]="O" And c[8]="O" Then
+    winer = "O"
+  EndIf
+  If c[3]="O" And c[6]="O" And c[9]="O" Then
+    winer = "O"
+  EndIf
+  If c[1]="O" And c[5]="O" And c[9]="O" Then
+    winer = "O"
+  EndIf
+  If c[3]="O" And c[5]="O" And c[7]="O" Then
+    winer = "O"
+  EndIf
+EndSub
+
+
+
+Sub getstatus
+  If winer = "X" Or winer = "O" Then
+    Shapes.SetText(status,"Player " + winer + " wins")
+    Sound.PlayChime()
+    Goto End
+  EndIf
+  If winer = "" Then
+    Shapes.SetText(status,"it is " + player + "'s turn")
+  ElseIf winer = "draw" then
+    Shapes.SetText(status,"Do'nt have any winer")
+    Sound.PlayChimes()
+  EndIf
+  End :
+EndSub
+
+
+
+Sub restart
+  For i = 1 To 9
+    Controls.SetButtonCaption(btn[i],"")
+  EndFor
+  player = "X"
+  winer = ""
+  Color = 1
+EndSub
+
+
+
+Sub getcolor
+  B = Controls.LastClickedButton
+  caption = Controls.GetButtonCaption(B)
+  GraphicsWindow.FontSize = 60
+  If Color = 1 Then
+    GraphicsWindow.BrushColor = "blue"
+    Color = -Color
+  Else
+    GraphicsWindow.BrushColor = "red"
+    Color = -Color
+  EndIf
+  If winer = "" Then
+    If caption = "" Then
+      For i = 1 To 9
+        If B = btn[i] then
+          Controls.Remove(btn[i])
+          If i < 4 then
+            btn[i] = Controls.AddButton(player,15+95*(i-1),15)
+          ElseIf i < 7 then
+            btn[i] = Controls.AddButton(player,15+95*(i-4),110)
+          Else
+            btn[i] = Controls.AddButton(player,15+95*(i-7),205)
+          EndIf
+          Controls.SetSize(btn[i],75,75)
+        EndIf
+      EndFor
+    EndIf
+  EndIf
+  If player = "X" Then
+    player = "O"
+  Else
+    player = "X"
+  EndIf
+EndSub
