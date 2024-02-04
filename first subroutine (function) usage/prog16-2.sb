@@ -1,0 +1,32 @@
+start:
+getnumber()
+findandshowmax()
+
+TextWindow.Write("If you want to do agine this enter 1: ")
+i = TextWindow.ReadNumber()
+If i = 1 Then
+  TextWindow.WriteLine("")
+  Goto start
+Endif
+
+Sub getnumber
+  TextWindow.Write("Enter a 1st number: ")
+  n1 = TextWindow.ReadNumber()
+  TextWindow.WriteLine("")
+  TextWindow.Write("Enter a 2nd number: ")
+  n2 = TextWindow.ReadNumber()
+  TextWindow.WriteLine("")
+EndSub
+
+Sub findandshowmax
+  If (n1 > n2) Then
+    TextWindow.WriteLine(n1 + " > " + n2)
+    TextWindow.WriteLine("")
+  ElseIf (n1 = n2) Then
+    TextWindow.WriteLine(n1 + " = " + n2)
+    TextWindow.WriteLine("")
+  Else
+    TextWindow.WriteLine(n2 + " > " + n1)
+    TextWindow.WriteLine("")
+  EndIf
+EndSub

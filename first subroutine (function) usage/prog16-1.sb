@@ -1,0 +1,37 @@
+ start:
+DateAndTime()
+GetNameAndSayHello()
+repite()
+
+If i=1 then
+  Goto start
+endif
+
+
+Sub DateAndTime
+  TextWindow.WriteLine("Date and time is: ")
+  TextWindow.WriteLine("Date: " + Clock.Date)
+  TextWindow.WriteLine("time: " + Clock.Time)
+EndSub
+
+Sub GetNameAndSayHello
+  TextWindow.Write("Enter your name please: ")
+  name = TextWindow.Read()
+  TextWindow.WriteLine("")
+  TextWindow.WriteLine("Hello " + name + "how are you today?")
+  TextWindow.Read()
+EndSub
+
+Sub repite
+  TextWindow.BackgroundColor = "white"
+  TextWindow.ForegroundColor = "red"
+  TextWindow.Write("If you want to repite enter number 1 or no enter else 1 : ")
+  i = TextWindow.ReadNumber()
+  TextWindow.BackgroundColor = "black"
+  TextWindow.ForegroundColor = "white"
+EndSub
+
+ 
+
+
+
