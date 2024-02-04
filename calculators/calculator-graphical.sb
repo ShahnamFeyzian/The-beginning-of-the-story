@@ -1,0 +1,237 @@
+GraphicsWindow.Show()
+GraphicsWindow.BackgroundColor = GraphicsWindow.GetColorFromRGB(254,160,252)
+GraphicsWindow.Width = 250
+GraphicsWindow.Height = 300
+GraphicsWindow.CanResize = 0
+GraphicsWindow.FontSize = 20
+
+GraphicsWindow.PenWidth = 5
+GraphicsWindow.PenColor = "black"
+GraphicsWindow.BrushColor = GraphicsWindow.GetColorFromRGB(255,255,255)
+rectangle = Shapes.AddRectangle(250,50)
+Shapes.Move(rectangle,5,5)
+
+Controls.ButtonClicked = BC
+
+b[10] = "+"
+b[11] = "-"
+b[12] = "*"
+b[13] = "/"
+b[14] = 0
+b[15] = "="
+b[16] = "DLT"
+For i = 1 To 16
+  GraphicsWindow.BrushColor = GraphicsWindow.GetColorFromRGB(15,4,221)
+  If i < 4 Then
+    a[i] = Controls.AddButton(i,5+65*(i-1),65)
+  ElseIf i >= 4 and i < 7 then
+    a[i] = Controls.AddButton(i,5+65*(i-4),125)
+  Elseif i >= 7 and i < 10 then
+    a[i] = Controls.AddButton(i,5+65*(i-7),185)
+  Elseif i >= 10 and i < 14 then
+    a[i] = Controls.AddButton(b[i],200,65 + 60*(i-10))
+  EndIf
+  If i = 14 Then
+    a[i] = Controls.AddButton(b[i],5,245)
+  EndIf
+  If i > 14 Then
+    a[i] = Controls.AddButton(b[i],70+65*(i-15),245)
+  EndIf 
+  Controls.SetSize(a[i],55,50)
+EndFor
+
+m = 0
+g = -13
+Sub Show
+  GraphicsWindow.FontSize = 20
+  btn = Controls.LastClickedButton
+  For i = 1 To 9
+    If btn = a[i] Then
+      If marg = 1 Then
+        Shapes.Remove(natige)
+        N[num] = 0
+        marg = 0
+        g = -13
+      EndIf
+      crackter = i
+      g = g+13
+      m = m + 1
+    EndIf
+  EndFor
+  For i = 10 To 13
+    If btn = a[i] Then
+      crackter = b[i]
+      g = g+13
+      m = m + 1
+    EndIf
+  EndFor
+  For i = 14 To 14
+    If btn = a[i] Then
+      If marg = 1 Then
+        Shapes.Remove(natige)
+        N[num] = 0
+        marg = 0
+        g = -13
+      EndIf
+      crackter = 0
+      g = g+13
+      m = m + 1
+    EndIf
+  EndFor
+  For i = 15 To 15
+    If btn = a[15] Then
+      crackter = b[15]
+      g = g+13
+      m = m + 1
+    EndIf
+  EndFor
+  For i = 16 To 16
+    If btn = a[16] Then
+      Shapes.Remove(t[m])
+      m = m-1
+      g = g-13
+      g = Math.Max(g,-13)
+      Goto Endloop
+    EndIf
+  EndFor
+   t[m] = Shapes.AddText("")
+  Shapes.Move(t[m],10+g,15)
+  Shapes.SetText(t[m],crackter)
+  Endloop:
+EndSub
+
+
+num = 1
+N[1] = 0
+N[-1] = 0
+Sub BC
+  Show()
+  btn = Controls.LastClickedButton
+  add = Controls.GetButtonCaption(btn)
+  N[num] = 10*N[num]  
+  For j = 1 To 9
+    If btn = a[j] Then
+      N[num] = N[num] + j
+    EndIf
+  EndFor
+  If btn = a[14] Then
+    N[num] = N[num] + 0      
+  EndIf
+
+    If btn = a[10] Then
+      N[num] = N[num]/10
+      num = -1
+      alamat = 1
+      marg = 0
+    EndIf
+    If btn = a[11] Then
+      N[num] = N[num]/10
+      num = -1
+      alamat = 2
+      marg = 0
+    EndIf
+    If btn = a[12] Then
+      N[num] = N[num]/10
+      num = -1
+      alamat = 3
+      marg = 0
+    EndIf
+    If btn = a[13] Then
+      N[num] = N[num]/10
+      num = -1
+      alamat = 4
+      marg = 0
+    EndIf
+    If btn = a[16] Then
+      If marg = 1 Then
+        Shapes.Remove(natige)
+        N[num] = 0
+        marg = 0
+        g = -13
+        Goto aftermarg
+      EndIf
+      If Math.Round(N[num]/100) > N[num]/100 Then
+        N[num] = Math.Round(N[num]/100)-1
+      Else
+        N[num] = Math.Round(N[num]/100)
+      EndIf
+      aftermarg :
+    EndIf
+  If btn = a[15] Then
+    If alamat = 1 Then  
+      N[num] = N[num]/10
+      javab = N[1] + N[-1]
+    ElseIf alamat = 2 then
+      N[num] = N[num]/10
+      javab = N[1] - N[-1]
+    ElseIf alamat = 3 then
+      N[num] = N[num]/10
+      javab = N[1] * N[-1]
+    ElseIf alamat = 4 then
+      N[num] = N[num]/10
+      javab = Math.Round(N[1] / N[-1] * 1000) / 1000
+    Else
+      javab = N[num]/10
+    EndIf
+    For xx = 1 To m
+      Shapes.Remove(t[xx])
+      Shapes.Remove(natige)
+    EndFor
+    
+    natige = Shapes.AddText(javab)
+    Shapes.Move(natige,10,15)
+    num = 1
+    N[1] = javab
+    N[-1] = 0
+    marg = 1
+    
+    If javab < 0 Then
+      jagozary = 13
+    Else 
+      jagozary = 0
+    EndIf
+    
+    
+    If Math.Abs(javab) >= 0 And Math.Abs(javab) < 10 Then
+      g = 0 + jagozary
+    ElseIf Math.Abs(javab) >= 10 And Math.Abs(javab) < 100 then
+      g = 13 + jagozary
+    ElseIf Math.Abs(javab) >= 100 And Math.Abs(javab) < 1000 then
+      g = 26 + jagozary
+    ElseIf Math.Abs(javab) >= 1000 And Math.Abs(javab) < 10000 then
+      g = 39 + jagozary
+    ElseIf Math.Abs(javab) >= 10000 And Math.Abs(javab) < 100000 then
+      g = 52 + jagozary
+    ElseIf Math.Abs(javab) >= 100000 And Math.Abs(javab) < 1000000 then
+      g = 65 + jagozary
+    ElseIf Math.Abs(javab) >= 1000000 And Math.Abs(javab) < 10000000 then
+      g = 78 + jagozary
+    ElseIf Math.Abs(javab) >= 10000000 And Math.Abs(javab) < 100000000 then
+      g = 91 + jagozary
+    ElseIf Math.Abs(javab) >= 100000000 And Math.Abs(javab) < 1000000000 then
+      g = 104 + jagozary
+    ElseIf Math.Abs(javab) >= 1000000000 And Math.Abs(javab) < 10000000000 then
+      g = 117 + jagozary
+    ElseIf Math.Abs(javab) >= 10000000000 And Math.Abs(javab) < 100000000000 then
+      g = 130 + jagozary
+    ElseIf Math.Abs(javab) >= 100000000000 And Math.Abs(javab) < 1000000000000 then
+      g = 143 + jagozary
+    ElseIf Math.Abs(javab) >= 1000000000000 And Math.Abs(javab) < 10000000000000 then
+      g = 156 + jagozary
+    ElseIf Math.Abs(javab) >= 10000000000000 And Math.Abs(javab) < 100000000000000 then
+      g = 169 + jagozary
+    ElseIf Math.Abs(javab) >= 100000000000000 And Math.Abs(javab) < 1000000000000000 then
+      g = 182 + jagozary
+    ElseIf Math.Abs(javab) >= 1000000000000000 And Math.Abs(javab) < 10000000000000000 then
+      g = 195 + jagozary
+    ElseIf Math.Abs(javab) >= 10000000000000000 And Math.Abs(javab) < 100000000000000000 then
+      g = 208 + jagozary
+    ElseIf Math.Abs(javab) >= 100000000000000000 And Math.Abs(javab) < 1000000000000000000 then
+      g = 221 + jagozary
+    ElseIf Math.Abs(javab) >= 1000000000000000000 And Math.Abs(javab) < 10000000000000000000 then
+      g = 234 + jagozary
+    EndIf     
+  EndIf
+EndSub
+
+
