@@ -1,0 +1,35 @@
+start :
+TextWindow.Write("Enter a number: ")
+n = TextWindow.ReadNumber()
+TextWindow.WriteLine("")
+
+checkprime()
+
+If (isprime = 1) Then
+  TextWindow.WriteLine(n + " is a PRIME.")
+Else
+  TextWindow.WriteLine(n + " is NOT a PRIME.")
+Endif
+
+TextWindow.WriteLine("________________________________________________")
+TextWindow.WriteLine("")
+
+Goto start
+
+Sub checkprime
+  isprime = 1
+  If (n = 1) Then
+    isprime = 0
+    Goto finish
+  EndIf
+  For i = 2 To Math.SquareRoot(n)
+    If (Math.Remainder(n,i)=0) Then
+      isprime = 0 
+      Goto finish
+    EndIf
+    finish :
+  EndFor
+EndSub
+
+
+

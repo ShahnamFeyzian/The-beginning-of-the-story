@@ -1,0 +1,49 @@
+Turtle.Speed = 10
+x = 20
+y = 80
+For n = 3 To 8
+  PickRandomColor()
+  DrawPolygon()
+  x = x + 90
+EndFor
+
+x = 20
+y = 180
+For n = 9 To 14
+  PickRandomColor()
+  DrawPolygon()
+  x = x + 90
+EndFor
+
+x = 20
+y = 280
+For n = 15 To 20
+  PickRandomColor()
+  DrawPolygon()
+  x = x + 90
+EndFor
+
+x = 20
+y = 380
+For n = 21 To 26
+  PickRandomColor()
+  DrawPolygon()
+  x = x + 90
+EndFor
+
+Turtle.Hide()
+
+Sub DrawPolygon
+  Turtle.X = x
+  Turtle.Y = y
+  Length = 220/n
+  Angle = 360/n
+  For i = 1 To n
+    Turtle.Move(Length)
+    Turtle.Turn(Angle)
+  EndFor
+EndSub
+
+Sub PickRandomColor
+  GraphicsWindow.PenColor = GraphicsWindow.GetRandomColor()
+EndSub

@@ -1,0 +1,53 @@
+start :
+TextWindow.WriteLine("This program shows you a prime number betwen 1stN to 2ndN")
+TextWindow.WriteLine("")
+TextWindow.Write("Enter a 1st number: ")
+N1 = TextWindow.ReadNumber()
+TextWindow.WriteLine("")
+TextWindow.Write("Enter a 2nd number: ")
+N2 = TextWindow.ReadNumber()
+TextWindow.WriteLine("")
+TextWindow.Write("prim(s)is(are): ")
+If (N1 >= N2) Then
+  For n = N2 To N1 
+    checkprime()
+    If (isprime = 1) Then
+      TextWindow.Write(n + ", ")
+    EndIf
+ EndFor
+Else
+  For n = N1 To N2 
+    checkprime()
+    If (isprime = 1) Then
+      TextWindow.Write(n + ", ")
+    EndIf
+  EndFor
+EndIf   
+
+TextWindow.WriteLine("")
+TextWindow.WriteLine("________________________________________________")
+TextWindow.WriteLine("")
+
+Goto start
+
+Sub checkprime
+  isprime = 1
+  If (n = 1) Then
+    isprime = 0
+    Goto finish
+  EndIf
+  For i = 2 To Math.SquareRoot(n)
+    If (Math.Remainder(n,i)=0) Then
+      isprime = 0 
+      Goto finish
+    EndIf
+    finish :
+  EndFor
+EndSub
+        
+      
+ 
+
+
+
+
