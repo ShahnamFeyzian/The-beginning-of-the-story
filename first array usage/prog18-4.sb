@@ -1,0 +1,11 @@
+Data["name"] = "Shahnam"
+Data["last name"] = "Feyzian"
+Data["age"] = 17
+Data["city"] = "Tehran"
+Data["country"] = "Iran"
+
+TextWindow.Write("Enter the index: ")
+index = TextWindow.Read()
+TextWindow.WriteLine("")
+
+TextWindow.WriteLine("The " + index + ": " + Data[index])

@@ -1,0 +1,36 @@
+TextWindow.WriteLine("Enter the number(s), stop with enter negative number")
+
+i = 1
+While 1=1
+  TextWindow.Write("Please enter #"+ i + "number: ")
+  y = TextWindow.ReadNumber()
+  TextWindow.WriteLine("")
+  If (y < 0) Then
+    Goto endloop
+  EndIf
+  X[i] = y
+  i = i + 1
+Endwhile
+endloop:
+  
+getmean()
+
+TextWindow.WriteLine("AVG = "+ mean)
+
+TextWindow.WriteLine("")
+
+Sub getmean
+  getsum()
+  mean = sum / Array.GetItemCount(X)
+EndSub
+
+Sub getsum
+  sum = 0
+  For i = 1 To Array.GetItemCount(X)
+    sum = sum + X[i]
+  EndFor
+EndSub
+
+
+
+

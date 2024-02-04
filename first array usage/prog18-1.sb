@@ -1,0 +1,20 @@
+M = 6000
+K = 6
+
+For i = 1 To K
+  N[i] = 0
+EndFor
+
+sum = 0
+For i = 1 To M
+  r = Math.GetRandomNumber(K)
+  N[r] = N[r] + 1
+  sum = sum + 1
+EndFor
+
+For i = 1 To K
+  TextWindow.WriteLine("N" + i + " =" + N[i])
+EndFor
+
+TextWindow.WriteLine("tutal = " + sum)
+

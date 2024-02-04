@@ -1,0 +1,31 @@
+TextWindow.Write("Enter a number of gread: ")
+N = TextWindow.ReadNumber()
+TextWindow.WriteLine("")
+
+For i = 1 To N
+  TextWindow.Write("Please enter #"+ i + " number: ")
+  X[i] = TextWindow.ReadNumber()
+  TextWindow.WriteLine("")
+EndFor
+
+getmean()
+
+TextWindow.WriteLine("AVG = "+ mean)
+
+TextWindow.WriteLine("")
+
+Sub getmean
+  getsum()
+  mean = sum / N
+EndSub
+
+Sub getsum
+  sum = 0
+  For i = 1 To N
+    sum = sum + X[i]
+  EndFor
+EndSub
+
+
+
+
