@@ -1,0 +1,19 @@
+TextWindow.Write("Enter a number of tedade azla: ")
+TA = TextWindow.ReadNumber()
+
+GraphicsWindow.Width = 1600
+GraphicsWindow.Height = 900
+
+GraphicsWindow.PenColor = GraphicsWindow.GetRandomColor()
+GraphicsWindow.PenWidth = Math.GetRandomNumber (3)
+Turtle.X = 800
+Turtle.Y = 450
+Turtle.Speed = 10
+
+k = 0
+For i = 1 To 150
+  Turtle.Turn (360 / TA)
+  Turtle.Move (20/TA + k)
+  k = k + 15/TA
+EndFor
+Turtle.Hide()

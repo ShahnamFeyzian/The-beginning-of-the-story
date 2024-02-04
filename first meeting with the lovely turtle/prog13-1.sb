@@ -1,0 +1,27 @@
+TextWindow.Write("Enter a number of TA: ")
+Ta = TextWindow.ReadNumber()
+TextWindow.Write("Enter a number of M: ")
+m = TextWindow.ReadNumber()
+TextWindow.Write("Enter a number of tedad noghte chin : ")
+T_N_CH = TextWindow.ReadNumber()
+L = m / Ta
+z = 360 / Ta
+
+GraphicsWindow.Width = 1500
+GraphicsWindow.Height = 750
+
+Turtle.X = 1500/2
+Turtle.Y = 580
+Turtle.Speed = 9
+GraphicsWindow.PenWidth = 5
+
+For i = 1 To Ta
+  For j = 1 To T_N_CH
+    Turtle.PenDown()
+    Turtle.Move(L / (T_N_CH/2))
+    Turtle.PenUp()
+    Turtle.Move(L / (T_N_CH/2))
+  EndFor
+  Turtle.Turn(z)
+EndFor
+Turtle.Hide()
