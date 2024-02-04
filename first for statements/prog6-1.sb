@@ -1,0 +1,3 @@
+For n = 1 To 50
+  TextWindow.WriteLine(n)
+EndFor

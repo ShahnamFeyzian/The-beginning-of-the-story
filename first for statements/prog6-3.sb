@@ -1,0 +1,3 @@
+For n = 50 To 1 Step -1
+  TextWindow.WriteLine(n)
+EndFor

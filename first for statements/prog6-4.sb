@@ -1,0 +1,29 @@
+    start:
+TextWindow.ForegroundColor = "white"
+TextWindow.Write("Enter a number: ")
+n = TextWindow.ReadNumber()
+TextWindow.Write("List of divisors of " + n + ":")
+TextWindow.Write("{")
+k=0
+
+For i = n To 1 Step -1
+  If (Math.Remainder(n,i))=0 Then
+    TextWindow.Write(i)
+    k = k + 1
+  If (i>1) then
+    TextWindow.Write(",")
+  EndIf
+  EndIf
+EndFor
+TextWindow.WriteLine("}")
+TextWindow.ForegroundColor = "magenta"
+TextWindow.WriteLine("")
+TextWindow.WriteLine(n + " has " + k + "divisor(s)")
+TextWindow.WriteLine("")
+TextWindow.ForegroundColor = "white"
+If n>1 And k=2 Then
+  TextWindow.WriteLine(n + " is a prime number")
+  TextWindow.WriteLine("")
+EndIf
+TextWindow.WriteLine("_________________________________________________________________")
+    Goto start
