@@ -1,0 +1,24 @@
+'آماده سازی
+GraphicsWindow.CanResize = 0
+GraphicsWindow.Width = 600
+GraphicsWindow.Height = 400
+
+'خط اول
+GraphicsWindow.PenColor = "gold"
+GraphicsWindow.PenWidth = 3
+GraphicsWindow.DrawLine(0,0,600,400)
+
+'خط دوم
+GraphicsWindow.PenColor = "red"
+GraphicsWindow.PenWidth = 5
+GraphicsWindow.DrawLine(600,0,0,400)
+
+'خط سوم
+GraphicsWindow.PenColor = "black"
+GraphicsWindow.PenWidth = 7
+GraphicsWindow.DrawLine(0,200,600,200)
+
+'خط چهارم
+GraphicsWindow.PenColor = "green"
+GraphicsWindow.PenWidth = 1
+GraphicsWindow.DrawLine(300,0,300,400)

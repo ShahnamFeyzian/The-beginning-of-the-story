@@ -1,0 +1,6 @@
+GraphicsWindow.Title = "My first graphical program"
+GraphicsWindow.BackgroundColor = "steelblue"
+GraphicsWindow.Width = 600
+GraphicsWindow.Height = 300
+GraphicsWindow.CanResize = 0
+GraphicsWindow.Show()

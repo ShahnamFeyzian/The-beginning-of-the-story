@@ -1,0 +1,33 @@
+GraphicsWindow.CanResize = 0
+GraphicsWindow.BackgroundColor = "darkblue"
+GraphicsWindow.PenColor = "red"
+GraphicsWindow.PenWidth = 4
+GraphicsWindow.Width = 800
+GraphicsWindow.Height = 500
+
+x = 80
+y = 50
+
+GraphicsWindow.DrawLine(10*x,0,0,y)
+GraphicsWindow.DrawLine(9*x,0,0,2*y)
+GraphicsWindow.DrawLine(8*x,0,0,3*y)
+GraphicsWindow.DrawLine(7*x,0,0,4*y)
+GraphicsWindow.DrawLine(6*x,0,0,5*y)
+GraphicsWindow.DrawLine(5*x,0,0,6*y)
+GraphicsWindow.DrawLine(4*x,0,0,7*y)
+GraphicsWindow.DrawLine(3*x,0,0,8*y)
+GraphicsWindow.DrawLine(2*x,0,0,9*y)
+GraphicsWindow.DrawLine(x,0,0,10*y)
+
+GraphicsWindow.PenColor = "yellow"
+
+GraphicsWindow.DrawLine(10*x,0,9*x,10*y)
+GraphicsWindow.DrawLine(10*x,y,8*x,10*y)
+GraphicsWindow.DrawLine(10*x,2*y,7*x,10*y)
+GraphicsWindow.DrawLine(10*x,3*y,6*x,10*y)
+GraphicsWindow.DrawLine(10*x,4*y,5*x,10*y)
+GraphicsWindow.DrawLine(10*x,5*y,4*x,10*y)
+GraphicsWindow.DrawLine(10*x,6*y,3*x,10*y)
+GraphicsWindow.DrawLine(10*x,7*y,2*x,10*y)
+GraphicsWindow.DrawLine(10*x,8*y,x,10*y)
+GraphicsWindow.DrawLine(10*x,9*y,0,10*y)
