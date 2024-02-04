@@ -1,0 +1,9 @@
+GraphicsWindow.KeyDown = showKey
+
+t = Shapes.AddText("")
+Shapes.Move(t,20,20)
+
+Sub showKey
+  Shapes.SetText(t,GraphicsWindow.LastKey)
+EndSub
+  
