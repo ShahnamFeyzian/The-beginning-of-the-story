@@ -1,0 +1,33 @@
+GraphicsWindow.Show()
+GraphicsWindow.BrushColor = "green"
+GraphicsWindow.FontSize = 15
+B1 = Controls.AddButton("red",10,10)
+Controls.SetSize(B1,80,30)
+
+B2 = Controls.AddButton("blue",10,50)
+Controls.SetSize(B2,80,30)
+
+B3 = Controls.AddButton("yellow",10,90)
+Controls.SetSize(B3,80,30)
+
+B4 = Controls.AddButton("black",10,130)
+Controls.SetSize(B4,80,30)
+
+B5 = Controls.AddButton("lime",10,170)
+Controls.SetSize(B5,80,30)
+
+B6 = Controls.AddButton("magenta",10,210)
+Controls.SetSize(B6,80,30)
+
+B7 = Controls.AddButton("white",10,250)
+Controls.SetSize(B7,80,30)
+
+Controls.ButtonClicked = ButtonClicked
+
+Sub ButtonClicked
+  B = Controls.LastClickedButton
+  C = Controls.GetButtonCaption(B)
+  GraphicsWindow.BackgroundColor = C
+EndSub
+
+

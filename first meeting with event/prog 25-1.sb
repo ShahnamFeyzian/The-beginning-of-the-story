@@ -1,0 +1,26 @@
+GraphicsWindow.Show()
+GraphicsWindow.BrushColor = "black"
+
+Controls.ButtonClicked = BC
+
+B1 = Controls.AddButton("chang color",10,10)
+Controls.SetSize(B1,150,30)
+B2 = Controls.AddButton("back to white color",10,50)
+Controls.SetSize(B2,150,30)
+B3 = Controls.AddButton("end program",10,90)
+Controls.SetSize(B3,150,30)
+
+Sub BC
+  b = Controls.LastClickedButton
+  If b = B1 Then
+    GraphicsWindow.BackgroundColor = GraphicsWindow.GetRandomColor()
+  ElseIf b = B2 then
+    GraphicsWindow.BackgroundColor = "white"
+  ElseIf b = B3 then
+    GraphicsWindow.ShowMessage("Program Going to end","ENDING")
+    Program.End()
+  Endif
+EndSub
+ 
+
+
