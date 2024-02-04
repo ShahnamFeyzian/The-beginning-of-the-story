@@ -1,0 +1,10 @@
+TextWindow.Write("Enter a number: ")
+n=TextWindow.ReadNumber()
+TextWindow.WriteLine("")
+
+    start:
+If (n>=1) Then
+  TextWindow.WriteLine(n)
+  n=n/2
+EndIf
+    Goto start
