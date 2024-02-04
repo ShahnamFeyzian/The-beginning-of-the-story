@@ -1,0 +1,6 @@
+GraphicsWindow.MouseDown = mousedown
+
+Sub mousedown
+  GraphicsWindow.BackgroundColor = GraphicsWindow.GetRandomColor()
+EndSub
+  

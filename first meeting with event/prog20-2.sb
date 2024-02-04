@@ -1,0 +1,12 @@
+GraphicsWindow.BrushColor = "green"
+
+GraphicsWindow.MouseDown = fillelipse
+
+Sub fillelipse
+  r = 10
+  x = GraphicsWindow.MouseX - r
+  y = GraphicsWindow.MouseY - r
+  GraphicsWindow.FillEllipse(x,y,2*r,2*r)
+EndSub
+
+  

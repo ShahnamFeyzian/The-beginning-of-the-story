@@ -1,0 +1,17 @@
+GraphicsWindow.MouseDown = fill
+GraphicsWindow.KeyDown = setcolor
+
+Sub fill
+  r = 20
+  x = GraphicsWindow.MouseX - r
+  y = GraphicsWindow.MouseY - r
+  If (Mouse.IsLeftButtonDown) Then
+    GraphicsWindow.FillEllipse(x,y,2*r,2*r)
+  ElseIf (Mouse.IsRightButtonDown) Then
+    GraphicsWindow.FillRectangle(x,y,2*r,2*r)
+  EndIf
+EndSub
+
+Sub setcolor
+  GraphicsWindow.BrushColor = GraphicsWindow.GetRandomColor()
+EndSub
