@@ -1,0 +1,20 @@
+TextWindow.Write("Enter a number: ")
+
+N = TextWindow.ReadNumber()
+W = 1000
+H = 600
+
+GraphicsWindow.Title = "ffffffffffff"
+GraphicsWindow.BackgroundColor = "steelblue"
+GraphicsWindow.Width = W
+GraphicsWindow.Height = H
+GraphicsWindow.PenColor = "yellow"
+GraphicsWindow.PenWidth = 1
+
+For i = 1 To N
+  X = W / (2*N+2) * i
+  Y = H / (2*N+2) * i
+  w1 = W / (N+1) * (N - i + 1)
+  H1 = H / (N+1) * (N - i + 1)
+  GraphicsWindow.DrawRectangle (X,Y,w1,H1)
+EndFor

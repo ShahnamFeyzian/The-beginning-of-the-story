@@ -1,0 +1,14 @@
+W = 300
+H = 200
+N = 10
+GraphicsWindow.Width = W
+GraphicsWindow.Height = H
+x0 = W/2
+y0 = H/2
+For i = 1 To N
+  ws = i * W / N
+  hs = i * H / N
+  x = x0 - ws/2
+  y = y0 - hs/2
+  GraphicsWindow.DrawRectangle(x,y,ws,hs)
+EndFor

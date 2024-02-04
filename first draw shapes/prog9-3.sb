@@ -1,0 +1,18 @@
+GraphicsWindow.Width = 1000
+GraphicsWindow.Height = 600
+
+GraphicsWindow.PenColor = "black"
+GraphicsWindow.PenWidth = 5
+GraphicsWindow.DrawEllipse (250,150,500,300)
+
+GraphicsWindow.PenColor = "red"
+GraphicsWindow.PenWidth = 6
+GraphicsWindow.DrawEllipse (300,200,400,200)
+
+GraphicsWindow.PenColor = "lime"
+GraphicsWindow.PenWidth = 7
+GraphicsWindow.DrawEllipse (350,250,300,100)
+
+GraphicsWindow.PenColor = "gold"
+GraphicsWindow.PenWidth = 5
+GraphicsWindow.DrawEllipse (375,275,250,50)
