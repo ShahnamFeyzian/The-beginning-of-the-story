@@ -1,0 +1,35 @@
+W = 400
+H = 700
+GraphicsWindow.Width = W
+GraphicsWindow.Height = H
+
+r = 20
+Ball = Shapes.AddEllipse(2*r,2*r)
+Shapes.Move(Ball,w/2-r,0)
+
+GraphicsWindow.BrushColor = "gold"
+Ball2 = Shapes.AddEllipse(2*r,2*r)
+Shapes.Move(Ball2,w/2-r,H-2*r)
+
+GraphicsWindow.BrushColor = "green"
+Ball3 = Shapes.AddEllipse(2*r,2*r)
+Shapes.Move(Ball3,0,H/2-r)
+
+GraphicsWindow.BrushColor = "red"
+Ball4= Shapes.AddEllipse(2*r,2*r)
+Shapes.Move(Ball4,W-2*r,H/2-r)
+
+T = 1000
+While 1=1
+  Shapes.Animate(Ball,w/2-r,h-2*r,T)
+  Shapes.Animate(Ball2,w/2-r,0,T)
+  Shapes.Animate(Ball3,W-2*r,H/2-r,T)
+  Shapes.Animate(Ball4,0,H/2-r,T)
+  Program.Delay(T)
+  Shapes.Animate(Ball,w/2-r,0,T)
+  Shapes.Animate(Ball2,w/2-r,h-2*r,T)
+  Shapes.Animate(Ball3,0,H/2-r,T)
+  Shapes.Animate(Ball4,W-2*r,H/2-r,T)
+  Program.Delay(T)
+EndWhile
+

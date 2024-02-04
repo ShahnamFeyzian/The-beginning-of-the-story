@@ -1,0 +1,25 @@
+H = 500
+W = 1000
+GraphicsWindow.PenWidth = 4
+GraphicsWindow.BrushColor = "gold"
+GraphicsWindow.Height = H
+GraphicsWindow.Width = W
+
+R1 = Shapes.AddLine(20,20,200,100)
+
+X = 0
+Y = 0
+For i = 1 to 5
+  Shapes.Move(R1,X,Y)
+  setpositon()
+  X = X + (W/5) 
+  Y = Y + (H/5) 
+Endfor
+
+Sub setpositon
+  X = Shapes.GetLeft(R1) 
+  Y = Shapes.GetTop(R1)  
+  GraphicsWindow.Title = "R1 position is (" + (X+20) + "," + (Y+20) + ")"
+  Program.Delay(1500)
+EndSub
+  

@@ -1,0 +1,36 @@
+GraphicsWindow.Width = 700
+GraphicsWindow.Height = 700
+GraphicsWindow.PenWidth = 4
+
+GraphicsWindow.BrushColor = "green"
+R[1] = Shapes.AddRectangle(200,200)
+Shapes.Move(R[1],150,150)
+
+GraphicsWindow.BrushColor = "red"
+R[2] = Shapes.AddRectangle(200,200)
+Shapes.Move(R[2],350,150)
+
+GraphicsWindow.BrushColor = "blue"
+R[3] = Shapes.AddRectangle(200,200)
+Shapes.Move(R[3],150,350)
+
+GraphicsWindow.BrushColor = "yellow"
+R[4] = Shapes.AddRectangle(200,200)
+Shapes.Move(R[4],350,350)
+Z = 1
+Zplas = 0.01
+A = 0.25
+While 1=1
+  For i = 1 To 4
+    Shapes.Rotate(R[i],A)
+    Shapes.Zoom(R[i],Z,Z)
+  EndFor
+  Program.Delay(10)
+  If (Z = 2) Or (Z = 0.5) Then
+    Zplas = -Zplas
+  EndIf
+  Z = Z + Zplas
+  A = A + 0.25
+EndWhile
+
+

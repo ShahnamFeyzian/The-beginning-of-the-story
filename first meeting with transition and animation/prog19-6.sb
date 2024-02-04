@@ -1,0 +1,30 @@
+GraphicsWindow.Width = 600
+GraphicsWindow.Height = 600
+GraphicsWindow.PenWidth = 4
+
+GraphicsWindow.BrushColor = "green"
+R[1] = Shapes.AddRectangle(200,200)
+Shapes.Move(R[1],100,100)
+
+GraphicsWindow.BrushColor = "red"
+R[2] = Shapes.AddRectangle(200,200)
+Shapes.Move(R[2],300,100)
+
+GraphicsWindow.BrushColor = "blue"
+R[3] = Shapes.AddRectangle(200,200)
+Shapes.Move(R[3],100,300)
+
+GraphicsWindow.BrushColor = "yellow"
+R[4] = Shapes.AddRectangle(200,200)
+Shapes.Move(R[4],300,300)
+
+A = 0.25
+While 1=1
+  For i = 1 To 4
+    Shapes.Rotate(R[i],A)
+  EndFor
+  Program.Delay(10)
+  A = A + 0.25
+EndWhile
+
+
