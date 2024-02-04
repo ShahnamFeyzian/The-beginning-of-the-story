@@ -1,0 +1,6 @@
+TextWindow.Write("what is your name??? ")
+name = TextWindow.Read()
+TextWindow.WriteLine("")
+TextWindow.WriteLine("HELLO " + name + "   WELCOME TO MY PROGRAM")
+TextWindow.WriteLine("")
+TextWindow.WriteLine("")

@@ -1,0 +1,19 @@
+TextWindow.Write("Enter 1st number : ")
+number1 = TextWindow.ReadNumber()
+
+TextWindow.Write("Enter 2nd number : ")
+number2 = TextWindow.ReadNumber()
+
+number3 = number1 + number2
+TextWindow.WriteLine(number1 + "+" + number2 + "=" + number3)
+
+number4 = number1 - number2
+TextWindow.WriteLine(number1 + "-" + number2 + "=" + number4)
+
+number5 = number1 * number2
+TextWindow.WriteLine(number1 + "*" + number2 + "=" + number5)
+
+number6 = number1 / number2
+TextWindow.WriteLine(number1 + "/" + number2 + "=" + number6)
+
+TextWindow.WriteLine("")
