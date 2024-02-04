@@ -1,0 +1,26 @@
+TextWindow.Write("Enter a number: ")
+T = TextWindow.ReadNumber()
+L = 1000/50
+z = 360/50
+
+GraphicsWindow.Width = 1000
+GraphicsWindow.Height = 700
+
+GraphicsWindow.PenWidth = Math.GetRandomNumber(5) + 2
+GraphicsWindow.PenColor = GraphicsWindow.GetRandomColor()
+
+Turtle.Speed = 10
+Turtle.X = 500
+Turtle.Y = 350
+
+For i1 = 1 To T
+  For i = 1 To 50
+    Turtle.Move (L)
+    Turtle.Turn(z)
+  EndFor
+   GraphicsWindow.PenColor = GraphicsWindow.GetRandomColor()
+  Turtle.Turn (360 / T)
+EndFor
+
+
+  

@@ -1,0 +1,29 @@
+TextWindow.Write("Enter a number of repite: ")
+R = TextWindow.ReadNumber()
+TextWindow.WriteLine("")
+TextWindow.Write("Enter a number of tedad azla: ")
+T = TextWindow.ReadNumber()
+L = 1000/T
+z = 360/T
+
+GraphicsWindow.Width = 1000
+GraphicsWindow.Height = 700
+
+GraphicsWindow.PenWidth = Math.GetRandomNumber(5) + 2
+GraphicsWindow.PenColor = GraphicsWindow.GetRandomColor()
+
+Turtle.Speed = 10
+Turtle.X = 500
+Turtle.Y = 350
+
+For i1 = 1 To R
+  For i = 1 To T
+    Turtle.Move (L)
+    Turtle.Turn(z)
+  EndFor
+  Turtle.Turn (360 / R)
+EndFor
+Turtle.Hide()
+
+
+  
