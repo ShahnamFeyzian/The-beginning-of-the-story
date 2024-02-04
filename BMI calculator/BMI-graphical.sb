@@ -1,0 +1,72 @@
+GraphicsWindow.Show()
+GraphicsWindow.CanResize = 0
+GraphicsWindow.Title = "BMI calculator"
+GraphicsWindow.Width = 170
+GraphicsWindow.Height = 200
+GraphicsWindow.BackgroundColor = GraphicsWindow.GetColorFromRGB(215,255,250)
+GraphicsWindow.BrushColor = GraphicsWindow.GetColorFromRGB(83,34,75)
+
+txtWeight = Controls.AddTextBox(80,5)
+Controls.SetSize(txtWeight,80,20)
+Controls.SetTextBoxText(txtWeight,0)
+txtheight = Controls.AddTextBox(80,45)
+Controls.SetSize(txtheight,80,20)
+Controls.SetTextBoxText(txtheight.0)
+
+Controls.TextTyped = t
+
+
+For i = 1 To 5
+  A[i] = Shapes.AddText("")
+  Shapes.Move(A[i],5,5+40*(i-1))
+EndFor
+For i = 6 To 8
+  A[i] = Shapes.AddText("")
+  Shapes.Move(A[i],80,85+40*(i-6))
+EndFor
+
+Shapes.SetText(A[1],"وزن(kg) :")
+Shapes.SetText(A[2],"قد(cm) :")
+Shapes.SetText(A[3],"BMI :")
+Shapes.SetText(A[4],"وضعیت :")
+Shapes.SetText(A[5],"پیشنهاد :")
+Shapes.SetText(A[6],BMI)
+Shapes.SetText(A[7],status)
+Shapes.SetText(A[8],goodweight)
+
+Sub t
+  W = math.Abs (Controls.GetTextBoxText(txtWeight) * 1)
+  H = Math.Abs (Controls.GetTextBoxText(txtheight) * 1 /100)
+  
+  If (H = 0) Or (W = 0) Then
+    BMI = "---"
+    status = "---"
+    goodweight = "---"
+  Else
+    BMI = W/(H*H)
+    BMI = Math.Round(BMI*100)/100
+  EndIf
+  
+  If H<>0 And W<>0 Then
+    If BMI < 20 And BMI > 0 Then
+      status = "کمبود وزن"
+      goodweight = 20*(H*H) + " kg"  
+    ElseIf BMI <= 25 then
+      status = "مناسب"
+      goodweight =  22.5*(H*H) + " kg"
+    Else
+      status = "اضافه وزن"
+      goodweight =  25*(H*H) + " kg"  
+    EndIf
+  EndIf
+  Shapes.SetText(A[1],"وزن(kg) :")
+  Shapes.SetText(A[2],"قد(cm) :")
+  Shapes.SetText(A[3],"BMI :")
+  Shapes.SetText(A[4],"وضعیت :")
+  Shapes.SetText(A[5],"پیشنهاد :")
+  Shapes.SetText(A[6],BMI)
+  Shapes.SetText(A[7],status)
+  Shapes.SetText(A[8],goodweight)
+EndSub
+
+
