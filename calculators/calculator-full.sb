@@ -1,0 +1,58 @@
+GraphicsWindow.Show()
+GraphicsWindow.CanResize = 0
+GraphicsWindow.BrushColor = "black"
+GraphicsWindow.FontSize = 13
+GraphicsWindow.Width = 400
+GraphicsWindow.Height = 50
+
+txt1 = Controls.AddTextBox(10,10)
+Controls.SetSize(txt1,100,25)
+
+txt2 = Controls.AddTextBox(140,10)
+Controls.SetSize(txt2,100,25)
+
+a[1] = "+"
+a[2] = "-"
+a[3] = "*"
+a[4] = "/"
+opraition = 1
+
+B = Controls.AddButton("+",113,9)
+Controls.SetSize(B,24,27)
+
+m = Shapes.AddText("=")
+Shapes.Move(m,250,15)
+
+n = Shapes.AddText("0")
+Shapes.Move(n,270,15)
+
+Controls.ButtonClicked = btnclick
+Controls.TextTyped = txtTYPE
+
+Sub txtTYPE
+  n1 = Controls.GetTextBoxText(txt1)*1
+  n2 = Controls.GetTextBoxText(txt2)*1
+  If opraition = 1 Then
+    r = n1 + n2
+  ElseIf opraition = 2 then
+    r = n1 - n2
+  Elseif opraition = 3 then
+    r = n1 *n2
+  ElseIf opraition = 4 then
+    r = n1 / n2
+  EndIf
+  Shapes.SetText(n,r)
+EndSub
+
+Sub btnclick
+  opraition = opraition + 1
+  If opraition > 4 Then
+    opraition = 1 
+  EndIf
+  show()
+  txtTYPE()
+EndSub
+
+Sub show
+  Controls.SetButtonCaption(B,a[opraition])
+EndSub

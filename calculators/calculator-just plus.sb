@@ -1,0 +1,31 @@
+GraphicsWindow.Show()
+GraphicsWindow.CanResize = 0
+GraphicsWindow.BrushColor = "black"
+GraphicsWindow.FontSize = 13
+GraphicsWindow.Width = 400
+GraphicsWindow.Height = 50
+txt1 = Controls.AddTextBox(10,10)
+Controls.SetSize(txt1,100,25)
+
+txt2 = Controls.AddTextBox(140,10)
+Controls.SetSize(txt2,100,25)
+
+g = Shapes.AddText("+")
+Shapes.Move(g,120,15)
+
+m = Shapes.AddText("=")
+Shapes.Move(m,250,15)
+
+n = Shapes.AddText("0")
+Shapes.Move(n,270,15)
+
+Controls.TextTyped = txtTYPE
+
+Sub txtTYPE
+  n1 = Controls.GetTextBoxText(txt1)*1
+  n2 = Controls.GetTextBoxText(txt2)*1
+  Shapes.SetText(n,n1 +n2)
+EndSub
+
+
+
