@@ -1,0 +1,107 @@
+TextWindow.ForegroundColor = "white"
+oldcolor = TextWindow.ForegroundColor
+TextWindow.Write("What is your name my frind? ")
+name = TextWindow.Read()
+TextWindow.WriteLine("Nice to meet you " +name+". I want to show you.Are you healthy person?")
+   
+   start:
+   
+   
+TextWindow.WriteLine("")
+TextWindow.Write("Please enter your weight in Kg: ")
+wazn = TextWindow.ReadNumber()
+TextWindow.Write("Please enter your height in m: ")
+ghad = TextWindow.ReadNumber()
+TextWindow.WriteLine("")
+
+
+MBI = wazn/ghad/ghad
+
+If (MBI<18.5) Then
+  waznOK = 18.5*ghad*ghad
+EndIf
+
+If (MBI>25) Then
+  waznOK = 25*ghad*ghad
+EndIf
+
+
+
+If (MBI<18.5) Then
+  a = "an"
+  color = "yellow"
+  status = a+" underweight"
+EndIf
+
+If (18.5<=MBI And MBI<=25) Then
+  a = "a"
+  color = "green"
+  status = a+" normal"
+EndIf
+
+If (25<MBI And MBI<30) Then
+  a = "an"
+  color = "cyan"
+  status = a+" overweight"
+EndIf
+
+If (30<=MBI And MBI<35) Then
+  a = "an"  
+  color = "magenta"
+  status = a+" overweight 1"
+EndIf
+
+If (35<=MBI And MBI<=40) Then
+    a = "an"
+  color = "darkred"
+  status = a+" overweight 2"
+EndIf
+
+If (40<MBI) Then
+  a = "an"  
+  color = "red"
+  status = a+" overweight 4"
+EndIf
+
+
+TextWindow.Write("")
+TextWindow.Write("You are ")
+TextWindow.ForegroundColor = color
+TextWindow.Write(status)
+TextWindow.ForegroundColor = oldcolor
+TextWindow.WriteLine(".")
+TextWindow.Write("")
+
+
+If (18.5<=MBI And MBI<=25) Then
+  TextWindow.WriteLine("You dont need to give or left any weight")
+EndIf
+
+If (MBI<18.5) Then
+  OK = waznOK-wazn
+  TextWindow.WriteLine("")
+  TextWindow.Write("For be healthy you shold give ")
+  TextWindow.ForegroundColor = "green"
+  TextWindow.Write(OK)
+  TextWindow.ForegroundColor = oldcolor
+  TextWindow.WriteLine(" Kg weight.")
+EndIf
+
+If (MBI>25) Then
+  OK = wazn-waznOK
+  TextWindow.WriteLine("")
+  TextWindow.Write("For be healthy you shold left ")
+  TextWindow.ForegroundColor = "green"
+  TextWindow.Write(OK)
+  TextWindow.ForegroundColor = oldcolor
+  TextWindow.WriteLine(" Kg weight.")
+EndIf
+
+
+TextWindow.WriteLine("")
+TextWindow.WriteLine("Be happy")
+TextWindow.WriteLine("")
+TextWindow.WriteLine("_____________________________________")
+
+
+    Goto start
