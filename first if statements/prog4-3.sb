@@ -1,0 +1,7 @@
+TextWindow.Write("Enter a number: ")
+n = TextWindow.ReadNumber()
+If (Math.Remainder(n,2)=0) Then
+  TextWindow.WriteLine("This number is Even")
+Else
+  TextWindow.WriteLine("This number is odd")
+EndIf

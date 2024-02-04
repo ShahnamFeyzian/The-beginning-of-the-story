@@ -1,0 +1,6 @@
+If (Clock.Hour<12) Then
+  TextWindow.WriteLine("Good morning my frind")
+EndIf
+If (Clock.Hour>=12) Then
+  TextWindow.WriteLine("Good evening my frind")
+  EndIf
