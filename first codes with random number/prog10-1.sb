@@ -1,0 +1,4 @@
+For i = 1 To 20
+  n = Math.GetRandomNumber(6)
+  TextWindow.WriteLine (i + ": " + n)
+EndFor

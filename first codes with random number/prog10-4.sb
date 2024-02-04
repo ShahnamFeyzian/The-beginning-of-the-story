@@ -1,0 +1,20 @@
+W = 1000
+H = 600
+GraphicsWindow.CanResize = 0
+
+GraphicsWindow.Width = W
+GraphicsWindow.Height = H
+
+n100 = Math.GetRandomNumber(20)
+N = n100 + 20
+For i = 1 To N
+  x1 = Math.GetRandomNumber (W)
+  y1 = Math.GetRandomNumber (H)
+  x2 = Math.GetRandomNumber (W)
+  y2 = Math.GetRandomNumber (H)
+  
+  GraphicsWindow.PenWidth = Math.GetRandomNumber (7)
+  GraphicsWindow.penColor = GraphicsWindow.GetRandomColor()
+  GraphicsWindow.DrawLine (x1,y1,x2,y2)
+EndFor
+  

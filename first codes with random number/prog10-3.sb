@@ -1,0 +1,18 @@
+W = 1000
+H = 600
+GraphicsWindow.CanResize = 0
+
+GraphicsWindow.Width = W
+GraphicsWindow.Height = H
+GraphicsWindow.BackgroundColor = "black"
+
+n100 = Math.GetRandomNumber(50)
+N = n100 + 100
+For i = 1 To N
+  r = Math.GetRandomNumber (15)
+  x = Math.GetRandomNumber ((W - r))
+  y = Math.GetRandomNumber ((H - r))
+  GraphicsWindow.BrushColor = GraphicsWindow.GetRandomColor()
+  GraphicsWindow.FillEllipse(x,y,r,r)
+EndFor
+  

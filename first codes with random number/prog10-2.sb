@@ -1,0 +1,33 @@
+N = Math.GetRandomNumber(6000000)
+n1 = 0
+n2 = 0 
+n3 = 0
+n4 = 0
+n5 = 0
+n6 = 0
+
+For i = 1 To N
+  m = Math.GetRandomNumber (6)
+  If (m = 1) Then
+    n1 = n1 + 1  
+  ElseIf (m = 2) then
+      n2 = n2 + 1 
+  ElseIf (m = 3) then
+      n3 = n3 + 1  
+  ElseIf (m = 4)then
+      n4 = n4 + 1
+   ElseIf (m = 5) then
+      n5 = n5 + 1
+   Else
+      n6= n6+ 1
+    
+  EndIf
+EndFor
+
+TextWindow.WriteLine("1: " + n1)
+TextWindow.WriteLine("2: " + n2)
+TextWindow.WriteLine("3: " + n3)
+TextWindow.WriteLine("4: " + n4)
+TextWindow.WriteLine("5: " + n5)
+TextWindow.WriteLine("6: " + n6)
+TextWindow.WriteLine("total : " + N)

@@ -1,0 +1,22 @@
+TextWindow.Write("Enter a number: ")
+
+N = TextWindow.ReadNumber()
+W = 1000
+H = 600
+
+GraphicsWindow.Title = "ffffffffffff"
+GraphicsWindow.Width = W
+GraphicsWindow.Height = H
+
+For i = 1 To N
+  S1 = Math.GetRandomNumber(4)
+  S = S1 + 2
+  GraphicsWindow.PenWidth = S
+  GraphicsWindow.PenColor = GraphicsWindow.GetRandomColor()
+  
+  X = W / (2*N+2) * i
+  Y = H / (2*N+2) * i
+  w1 = W / (N+1) * (N - i + 1)
+  H1 = H / (N+1) * (N - i + 1)
+  GraphicsWindow.DrawRectangle (X,Y,w1,H1)
+EndFor
