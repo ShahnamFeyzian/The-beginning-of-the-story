@@ -1,0 +1,71 @@
+W = 750
+H = 500
+GraphicsWindow.CanResize = 0
+GraphicsWindow.Title = "Paddle Game"
+GraphicsWindow.BackgroundColor = "black"
+GraphicsWindow.Width = W
+GraphicsWindow.Height = H
+GraphicsWindow.MouseMove = MouseMove
+
+GraphicsWindow.PenColor = "green"
+GraphicsWindow.BrushColor = "white"
+r = 10
+Ball = Shapes.AddEllipse(2*r,2*r)
+
+GraphicsWindow.PenColor = "red"
+GraphicsWindow.BrushColor = "orange"
+pw = 150
+ph = 15
+paddle = Shapes.AddRectangle(pw,ph)
+Shapes.Move(paddle,W/2-pw/2,H-ph)
+paddle2 = Shapes.AddRectangle(pw,ph)
+Shapes.Move(paddle,W/2-pw/2,0)
+
+x = 0
+y = 0
+dx = 1
+dy = 1
+While 1=1
+  Program.Delay(3)
+  x = x + dx
+  y = y + dy
+  Shapes.Move(Ball,x,y)
+  If x = 0 Or x = W - 2*r Then
+    dx = -dx
+  EndIf
+  xp2 = Shapes.GetLeft(paddle2)
+  xp = Shapes.GetLeft(paddle)
+  If y = H-(ph+2*r) And x >= (xp-r) And x <= (xp+pw-r) Then
+    dy = -dy
+  ElseIf y = ph And x >= (xp-r) And x <= (xp+pw-r) then
+    dy = -dy
+  ElseIf y > H Or y < 0 then
+    Goto EndLoop
+  EndIf
+EndWhile
+EndLoop :
+GraphicsWindow.ShowMessage("GAME OVER","Paddle Game")
+Program.End()
+
+Sub MouseMove
+  xm = GraphicsWindow.MouseX-pw/2
+  xm = Math.Max(xm,0)
+  xm = Math.Min(xm,W-pw)
+  Shapes.Move(paddle,xm,H-ph)
+  Shapes.Move(paddle2,xm,0)
+EndSub
+  
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
