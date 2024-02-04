@@ -1,0 +1,51 @@
+TextWindow.ForegroundColor = "black"
+TextWindow.BackgroundColor = "white"
+TextWindow.WriteLine("black")
+
+TextWindow.BackgroundColor = "black"
+TextWindow.ForegroundColor = "white"
+TextWindow.WriteLine("white")
+
+TextWindow.ForegroundColor = "blue"
+TextWindow.WriteLine("blue")
+
+TextWindow.ForegroundColor = "darkblue"
+TextWindow.WriteLine("darkblue")
+
+TextWindow.ForegroundColor = "cyan"
+TextWindow.WriteLine("cyan")
+
+TextWindow.ForegroundColor = "darkcyan"
+TextWindow.WriteLine("darkcyan")
+
+TextWindow.ForegroundColor = "gray"
+TextWindow.WriteLine("gray")
+
+TextWindow.ForegroundColor = "darkgray"
+TextWindow.WriteLine("darkgray")
+
+TextWindow.ForegroundColor = "green"
+TextWindow.WriteLine("green")
+
+TextWindow.ForegroundColor = "darkgreen"
+TextWindow.WriteLine("darkgreen")
+
+TextWindow.ForegroundColor = "magenta"
+TextWindow.WriteLine("magenta")
+
+TextWindow.ForegroundColor = "darkmagenta"
+TextWindow.WriteLine("darkmagenta")
+
+TextWindow.ForegroundColor = "RED"
+TextWindow.WriteLine("red")
+
+TextWindow.ForegroundColor = "DARKRED"
+TextWindow.WriteLine("darkred")
+
+TextWindow.ForegroundColor = "yellow"
+TextWindow.WriteLine("yellow")
+
+TextWindow.ForegroundColor = "darkyellow"
+TextWindow.WriteLine("darkyellow")
+
+TextWindow.ForegroundColor = "white"
