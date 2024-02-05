@@ -49,7 +49,16 @@ This program takes a number and randomly turns the same number of pixels in the 
 [Here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20codes%20with%20pixels/prog11-5.sb) is the source code.
 
 ## Rotating Shapes With Turtle
-https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20meeting%20with%20the%20lovely%20turtle/prog12-4-4.sb
+This program takes two numbers, the first is the number of repetitions of the shape and the second is the number of sides of the shape.
+
+<div align="center">
+<image width="45%" src="./readme utils/repeated shapes/1.png"/>
+<image width="45%" src="./readme utils/repeated shapes/2.png"/>
+<image width="45%" src="./readme utils/repeated shapes/3.png"/>
+<image width="45%" src="./readme utils/repeated shapes/4.png"/>
+</div>
+
+[Here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20meeting%20with%20the%20lovely%20turtle/prog12-4-4.sb) is the source code.
 
 ## Maze With Turtle
 https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20meeting%20with%20the%20lovely%20turtle/prog13-2.sb
