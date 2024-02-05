@@ -1,0 +1,335 @@
+tedad = 5
+GraphicsWindow.Show()
+GraphicsWindow.Title = "POINT & LINE"
+GraphicsWindow.Width = 300
+GraphicsWindow.Height = 400
+GraphicsWindow.CanResize = 0
+GraphicsWindow.BackgroundColor = GraphicsWindow.GetColorFromRGB(255,253,193)
+GraphicsWindow.PenWidth = 4
+GraphicsWindow.FontSize = 20
+
+GraphicsWindow.BrushColor = 1
+For i = 1 To tedad*tedad
+  ngt[i] = Shapes.AddEllipse(10,10)
+  If i <= 5 Then
+    Shapes.Move(ngt[i],27+60*(i-1),25)
+  ElseIf i <= 10 then
+    Shapes.Move(ngt[i],27+60*(i-6),85)
+  Elseif i <= 15 then
+    Shapes.Move(ngt[i],27+60*(i-11),145)
+  Elseif i <= 20 then
+    Shapes.Move(ngt[i],27+60*(i-16),205)
+  Else
+    Shapes.Move(ngt[i],27+60*(i-21),265)
+  EndIf
+EndFor
+For i = 1 To tedad*tedad
+  Xngt[i] = Shapes.GetLeft(ngt[i])
+  Yngt[i] = Shapes.GetTop(ngt[i])
+EndFor
+
+status = Shapes.AddText("")
+Shapes.Move(status,27,290)
+GraphicsWindow.BrushColor = "blue"
+B = Shapes.AddText("Blue's points :")
+Shapes.Move(B,27,320)
+GraphicsWindow.BrushColor = "red"
+R = Shapes.AddText("Red's points :")
+Shapes.Move(R,27,350)
+GraphicsWindow.BrushColor = 1
+B = Shapes.AddText("")
+Shapes.Move(B,200,320)
+R = Shapes.AddText("")
+Shapes.Move(R,200,350)
+
+GraphicsWindow.FontSize = 15
+Controls.AddButton("RESTART",230,380)
+
+GraphicsWindow.MouseDown = MD
+GraphicsWindow.MouseMove = MV
+Controls.ButtonClicked = BC
+
+restart()
+Sub MD
+  get_L_N_K()
+  getpoints()
+  showstatus()
+EndSub
+Sub MV
+  namayesh()
+EndSub
+Sub bc
+  restart()
+EndSub
+
+
+
+
+'THIS SUB GETS LINE & SETS NOBAT & K   
+Sub get_L_N_K
+  If nobat = 1 Then
+    GraphicsWindow.PenColor = "blue"
+  Else
+    GraphicsWindow.PenColor = "red"
+  EndIf 
+  Xm = GraphicsWindow.MouseX
+  Ym = GraphicsWindow.MouseY
+  If aval <> 1 Then
+    For i = 1 To tedad*tedad
+      If Xm >= Xngt[i] And Xm <= Xngt[i]+10 And Ym >= Yngt[i] And Ym <= Yngt[i]+10 Then
+        aval = 1
+        k = k + 1 
+        Goto End
+      EndIf
+    EndFor
+  EndIf
+  If aval = 1 Then
+    If Xm >= Xngt[i] And Xm <= Xngt[i]+10 And Ym >= Yngt[i] And Ym <= Yngt[i]+10 Then
+      aval = 2
+      k = k - 1
+      Goto End
+    EndIf
+    For j = (i-1) To (i+1) 
+      If Xm >= Xngt[j] And Xm <= Xngt[j]+10 And Ym >= Yngt[j] And Ym <= Yngt[j]+10 Then
+        aval = 0 
+        nobat = -nobat 
+        Goto Loop
+      EndIf
+    EndFor
+    For j = (i-tedad) To (i+tedad) Step tedad
+     If Xm >= Xngt[j] And Xm <= Xngt[j]+10 And Ym >= Yngt[j] And Ym <= Yngt[j]+10 Then
+       aval = 0  
+       nobat = -nobat
+        Goto Loop
+      EndIf
+    EndFor  
+  EndIf
+  If 1 = 2 Then
+    Loop :
+    If i < j Then
+      X1[k] = Xngt[i]+5
+      Y1[k] = Yngt[i]+5
+      X2[k] = Xngt[j]+5
+      Y2[k] = Yngt[j]+5
+    Else
+      X1[k] = Xngt[j]+5
+      Y1[k] = Yngt[j]+5
+      X2[k] = Xngt[i]+5
+      Y2[k] = Yngt[i]+5
+    EndIf
+    khat[k] = Shapes.AddLine(X1[k],Y1[k],X2[k],Y2[k])
+  EndIf
+  End :
+EndSub
+
+
+
+'THIS SUB GIVS POINTS OF RED & BLUE 
+Sub getpoints
+  If aval = 0 Then
+    If Math.Abs(i-j) = 1 Then
+      For p = 1 To k
+        If X1[p] = X1[k] And Y1[p] = Y1[k]-60 And X2[p] = X2[k] And Y2[p] = Y2[k]-60 Then
+          For p = 1 To k
+            If X1[p] = X1[k] And Y1[p] = Y1[k]-60 And X2[p] = X2[k]-60 And Y2[p] = Y2[k] Then
+              For p = 1 To k
+                If X1[p] = X1[k]+60 And Y1[p] = Y1[k]-60 And X2[p] = X2[k] And Y2[p] = Y2 [k]Then
+                  If nobat = -1 Then 
+                    Bpoint = Bpoint + 1
+                    NBT = 1
+                  Else
+                    Rpoint = Rpoint + 1
+                    NBT = 1
+                  EndIf
+                ElseIf p = k then
+                EndIf
+              EndFor
+            ElseIf p = k then
+            EndIf
+          EndFor
+        EndIf
+      EndFor
+      For p = 1 To k
+        If X1[p] = X1[k] And Y1[p] = Y1[k]+60 And X2[p] = X2[k] And Y2[p] = Y2[k]+60 Then
+          For p = 1 To k
+            If X1[p] = X1[k] And Y1[p] = Y1[k] And X2[p] = X2[k]-60 And Y2[p] = Y2[k]+60 Then
+              For p = 1 To k
+                If X1[p] = X1[k]+60 And Y1[p] = Y1[k] And X2[p] = X2[k] And Y2[p] = Y2 [k]+60Then
+                  If nobat = -1 Then 
+                    Bpoint = Bpoint + 1
+                    NBT = 1
+                  Else
+                    Rpoint = Rpoint + 1
+                    NBT = 1
+                  EndIf
+                ElseIf p = k then
+                EndIf
+              EndFor
+            ElseIf p = k then
+            EndIf
+          EndFor
+        EndIf
+      EndFor
+    ElseIf Math.Abs(i-j) = tedad then
+      For p = 1 To k
+        If X1[p] = X1[k]+60 And Y1[p] = Y1[k] And X2[p] = X2[k]+60 And Y2[p] = Y2[k] Then
+          For p = 1 To k
+            If X1[p] = X1[k] And Y1[p] = Y1[k] And X2[p] = X2[k]+60 And Y2[p] = Y2[k]-60 Then
+              For p = 1 To k
+                If X1[p] = X1[k] And Y1[p] = Y1[k]+60 And X2[p] = X2[k]+60 And Y2[p] = Y2 [k] Then
+                  If nobat = -1 Then 
+                    Bpoint = Bpoint + 1
+                    NBT = 1
+                  Else
+                    Rpoint = Rpoint + 1
+                    NBT = 1
+                  EndIf
+                ElseIf p = k then
+                EndIf
+              EndFor
+            ElseIf p = k then
+            EndIf
+          EndFor
+        EndIf
+      EndFor
+      For p = 1 To k
+        If X1[p] = X1[k]-60 And Y1[p] = Y1[k] And X2[p] = X2[k]-60 And Y2[p] = Y2[k] Then
+          For p = 1 To k
+            If X1[p] = X1[k]-60 And Y1[p] = Y1[k] And X2[p] = X2[k] And Y2[p] = Y2[k]-60 Then
+              For p = 1 To k
+                If X1[p] = X1[k]-60 And Y1[p] = Y1[k]+60 And X2[p] = X2[k] And Y2[p] = Y2 [k] Then
+                  If nobat = -1 Then 
+                    Bpoint = Bpoint + 1
+                    NBT = 1
+                  Else
+                    Rpoint = Rpoint + 1
+                    NBT = 1
+                  EndIf
+                ElseIf p = k then
+                EndIf
+              EndFor
+            ElseIf p = k then
+            EndIf
+          EndFor
+        EndIf
+      EndFor
+    EndIf
+    If NBT = 1 Then
+      nobat = -nobat
+    EndIf
+    NBT = 0
+  EndIf
+EndSub
+
+
+
+'THIS SUB SHOWS STATUS
+Sub showstatus
+  If nobat = 1 Then
+    Shapes.SetText(status,"Blue's turn")
+  Else
+    Shapes.SetText(status,"Red's turn")
+  EndIf
+  If k = 40 Then
+    If Rpoint > Bpoint Then
+      Shapes.SetText(status,"Red wins")
+    Else
+      Shapes.SetText(status,"Blue wins")
+    EndIf
+  EndIf
+  Shapes.SetText(R,Rpoint)
+  Shapes.SetText(B,Bpoint)
+EndSub
+                  
+                  
+
+'THIS SUB SHOWS NESHAN
+Sub namayesh
+  If nobat = 1 Then
+    GraphicsWindow.PenColor = GraphicsWindow.GetColorFromRGB(150,150,255)
+  Else
+    GraphicsWindow.PenColor = GraphicsWindow.GetColorFromRGB(255,150,150)
+  EndIf
+  If aval = 1 Then
+    Xn1 = Xngt[i]+5
+    Yn1 = Yngt[i]+5
+    Xm = GraphicsWindow.MouseX
+    Ym = GraphicsWindow.MouseY
+    If Xm >= Xngt[i-1] And Xm <= Xngt[i-1]+10 And Ym >= Yngt[i-1] And Ym <= Yngt[i-1]+10 Then
+      If ok[1] = 1 Then
+        Goto End1
+      EndIf
+      Xn2 = Xngt[i-1]+5
+      Yn2 = Yngt[i-1]+5
+      n[1] = Shapes.AddLine(Xn1,Yn1,Xn2,Yn2)
+      ok[1] = 1
+      Goto End1
+    EndIf
+    If Xm >= Xngt[i+1] And Xm <= Xngt[i+1]+10 And Ym >= Yngt[i+1] And Ym <= Yngt[i+1]+10 Then
+      If ok[2] = 1 Then
+        Goto End1
+      EndIf
+      Xn2 = Xngt[i+1]+5
+      Yn2 = Yngt[i+1]+5
+      n[2] = Shapes.AddLine(Xn1,Yn1,Xn2,Yn2)
+      ok[2] = 1
+      Goto End1
+    EndIf
+    If Xm >= Xngt[i-tedad] And Xm <= Xngt[i-tedad]+10 And Ym >= Yngt[i-tedad] And Ym <= Yngt[i-tedad]+10 Then
+      If ok[3] = 1 Then
+        Goto End1
+      EndIf
+      Xn2 = Xngt[i-tedad]+5
+      Yn2 = Yngt[i-tedad]+5
+      n[3] = Shapes.AddLine(Xn1,Yn1,Xn2,Yn2)
+      ok[3] = 1
+      Goto End1
+    EndIf
+    If Xm >= Xngt[i+tedad] And Xm <= Xngt[i+tedad]+10 And Ym >= Yngt[i+tedad] And Ym <= Yngt[i+tedad]+10 Then
+      If ok[4] = 1 Then
+        Goto End1
+      EndIf
+      Xn2 = Xngt[i+tedad]+5
+      Yn2 = Yngt[i+tedad]+5
+      n[4] = Shapes.AddLine(Xn1,Yn1,Xn2,Yn2)
+      ok[4] = 1
+      Goto End1
+    EndIf 
+    For o = 1 To 4
+      Shapes.Remove(n[o])
+      ok[o] = 0
+    EndFor 
+  EndIf
+  End1 :
+EndSub
+
+
+
+'THIS SUB RESTARTS EVERY THING
+Sub restart
+  For w = 1 To k
+    Shapes.Remove(khat[w])
+    Y1[w] = 0
+    X1[w] = 0
+    Y2[w] = 0
+    X2[w] = 0
+  EndFor
+  For o = 1 To 4
+    Shapes.Remove(n[o])
+    ok[o] = 0
+  EndFor
+  NBT = 0
+  Bpoint = 0
+  Rpoint = 0
+  k = 0
+  nobat = 1
+  aval = 0
+  showstatus()
+EndSub
+
+  
+    
+
+    
+
+
