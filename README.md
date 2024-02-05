@@ -26,11 +26,17 @@ The first line of code I wrote.
 ```
 TextWindow.WriteLine("HELLO , WORLD")
 ```
-[Here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20hello%20world/hello%20world.sb) is the source.
+[Here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20hello%20world/hello%20world.sb) is the source code.
 
 
 ## List of Divisor
-https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20for%20statements/prog6-4.sb
+This was my first program that actually did something useful.
+<div align="center">
+<image src="./readme utils/divisors/1.png" width="90%"/>
+</div>
+<br>
+
+[Here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20for%20statements/prog6-4.sb) is the source code.
 
 ## Sierpinski Triangle
 https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20codes%20with%20pixels/prog11-5.sb
