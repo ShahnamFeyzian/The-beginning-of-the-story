@@ -1,0 +1,712 @@
+GraphicsWindow.Show()
+GraphicsWindow.Width = 1600
+GraphicsWindow.Height = 900
+
+'MAHALS
+GraphicsWindow.BrushColor = 0
+For i = 1 To 48
+  mahal[i] = Shapes.AddEllipse(50,50)
+  If i <= 2 Then
+    Wmahal = 765 + 60*(i-1)
+    Hmahal = 17
+  ElseIf i <= 7 then
+    Wmahal = 825
+    Hmahal = 77 + 60*(i-3)
+  Elseif i <= 12 then
+    Wmahal = 885 + 60*(i-8)
+    Hmahal = 317
+  Elseif i <= 14 then
+    Wmahal = 1125
+    Hmahal = 377 + 60*(i-13)
+  Elseif i <= 19 then
+    Wmahal = 1065 - 60*(i-15)
+    Hmahal = 437
+  Elseif i <= 24 then
+    Wmahal = 825
+    Hmahal = 497 + 60*(i-20)
+  Elseif i <= 26 then
+    Wmahal = 765 - 60*(i-25)
+    Hmahal = 737
+  Elseif i <= 31 then
+    Wmahal = 705
+    Hmahal = 677 - 60*(i-27)
+  Elseif i <= 36 then
+    Wmahal = 645 - 60*(i-32)
+    Hmahal = 437
+  Elseif i <= 38 then
+    Wmahal = 405
+    Hmahal = 377 - 60*(i-37)
+  Elseif i <= 43 then
+    Wmahal = 465 + 60*(i-39)
+    Hmahal = 317
+  Elseif i <= 48 then
+    Wmahal = 705
+    Hmahal = 257 - 60*(i-44)
+  EndIf
+  Shapes.Move(mahal[i],Wmahal,Hmahal)
+EndFor
+
+GraphicsWindow.BrushColor = "pink"
+For i = 49 To 64
+  mahal[i] = Shapes.AddEllipse(50,50)
+  If i <= 52 Then
+    Wmahal = 765
+    Hmahal = 77 + 60*(i-49)
+  ElseIf i <= 56 then
+    Wmahal = 1065 - 60*(i-53)
+    Hmahal = 377
+  Elseif i <= 60 then
+    Wmahal = 765
+    Hmahal = 677 - 60*(i-57)
+  Else
+    Wmahal = 465 + 60*(i-61)
+    Hmahal = 377
+  EndIf
+  Shapes.Move(mahal[i],Wmahal,Hmahal)
+EndFor
+
+'X & Y MAHALS 
+For i = 1 To 64
+  xmahal[i] = Shapes.GetLeft(mahal[i])
+  ymahal[i] = Shapes.GetTop(mahal[i])
+endfor
+
+
+'MOHRES
+GraphicsWindow.BrushColor = "blue"
+For i = 1 to 4
+  Bluemohre[i] = Shapes.AddRectangle(40,40)
+endfor
+GraphicsWindow.BrushColor = "red"
+For i = 1 to 4
+  redmohre[i] = Shapes.AddRectangle(40,40)
+endfor
+GraphicsWindow.BrushColor = "yellow"
+For i = 1 to 4
+  yellowmohre[i] = Shapes.AddRectangle(40,40)
+endfor
+GraphicsWindow.BrushColor = "lime"
+For i = 1 to 4
+  greenmohre[i] = Shapes.AddRectangle(40,40)
+endfor
+Shapes.Move(Bluemohre[1],910,187)
+Shapes.Move(Bluemohre[2],975,187)
+Shapes.Move(Bluemohre[3],910,252)
+Shapes.Move(Bluemohre[4],975,252)
+Shapes.Move(redmohre[1],910,522)
+Shapes.Move(redmohre[2],975,522)
+Shapes.Move(redmohre[3],910,577)
+Shapes.Move(redmohre[4],975,577)
+Shapes.Move(yellowmohre[1],575,522)
+Shapes.Move(yellowmohre[2],640,522)
+Shapes.Move(yellowmohre[3],575,577)
+Shapes.Move(yellowmohre[4],640,577)
+Shapes.Move(greenmohre[1],575,187)
+Shapes.Move(greenmohre[2],640,187)
+Shapes.Move(greenmohre[3],575,252)
+Shapes.Move(greenmohre[4],640,252)
+For i = 1 to 4 
+  B_Xavalie[i] = Shapes.GetLeft(Bluemohre[i])
+  B_Yavalie[i] = Shapes.GetTop(Bluemohre[i])
+endfor
+For i = 1 to 4 
+  R_Xavalie[i] = Shapes.GetLeft(redmohre[i])
+  R_Yavalie[i] = Shapes.GetTop(redmohre[i])
+endfor
+For i = 1 to 4 
+  Y_Xavalie[i] = Shapes.GetLeft(yellowmohre[i])
+  Y_Yavalie[i] = Shapes.GetTop(yellowmohre[i])
+endfor
+For i = 1 to 4 
+  G_Xavalie[i] = Shapes.GetLeft(greenmohre[i])
+  G_Yavalie[i] = Shapes.GetTop(greenmohre[i])
+endfor
+
+
+
+
+'TAS
+GraphicsWindow.BrushColor = 0
+GraphicsWindow.FontSize = 20
+Tasbtn = Controls.AddButton("roll",400,740)
+
+GraphicsWindow.BrushColor = GraphicsWindow.GetColorFromRGB(136,136,136)
+Tas = Shapes.AddRectangle(30,30)
+Shapes.Move(Tas,470,740)
+
+GraphicsWindow.BrushColor = "white"
+adad = Shapes.AddText("")
+Shapes.Move(adad,475,745)
+
+Controls.ButtonClicked = BC
+GraphicsWindow.MouseDown = MD
+
+'STATUS TXT
+GraphicsWindow.BrushColor = 0
+
+statustxt = Shapes.AddText("")
+Shapes.Move(statustxt,50,750)
+
+
+Sub BC
+  settasnumber()
+  setnobat()
+  showstatus()
+EndSub
+
+
+
+
+Sub MD
+  If nobat = 4 Then
+    greenmoving()
+  ElseIf nobat = 3 then
+    yellowmoving()
+  Elseif nobat = 2 then
+    redmoving()
+  Else
+    bluemoving()
+  EndIf
+  hit()
+  checkwiner()
+EndSub
+
+
+
+'BLUES MOVING
+For i = 1 to 4
+  B_halat[i] = 0
+endfor
+
+Sub bluemoving
+  For i = 1 To 4
+    x[i] = Shapes.GetLeft(Bluemohre[i])
+    y[i] = Shapes.GetTop(Bluemohre[i])
+  EndFor
+  xm = GraphicsWindow.MouseX
+  ym = GraphicsWindow.MouseY
+  For i = 1 To 4
+    If xm >= x[i] And xm <= x[i]+40 And ym >= y[i] And ym <= y[i]+40 Then
+      If B_halat[i] = 1 Then
+        B_c[i] = B_c[i] + tasnum
+        If B_c[i] >= 49 then
+          B_dor[i] = 1
+          B_c[i] = B_c[i] - 48
+        EndIf
+        If B_dor[i] = 1 then
+          If B_c[i] <= 5 then
+          If B_c[i] >= 2 then
+          B_d[i] = 47+B_c[i]
+        Else
+          B_d[i] = 1
+        EndIf 
+          For j = 1 To 4
+            If Shapes.GetLeft(Bluemohre[j]) = xmahal[B_d[i]]+5 and Shapes.GetTop(Bluemohre[j]) = ymahal[B_d[i]]+5 then 
+             Goto eror
+            EndIf
+          EndFor
+         Shapes.Animate(Bluemohre[i],xmahal[B_d[i]]+5,ymahal[B_d[i]]+5,500) 
+        Else
+          Goto eror
+        EndIf
+        Goto End
+      EndIf
+          For j = 1 To 4
+            If Shapes.GetLeft(Bluemohre[j]) = xmahal[B_c[i]]+5 and Shapes.GetTop(Bluemohre[j]) = ymahal[B_c[i]]+5 then 
+             Goto eror
+            EndIf
+          EndFor
+         Shapes.Animate(Bluemohre[i],xmahal[B_c[i]]+5,ymahal[B_c[i]]+5,500) 
+      EndIf
+      If tasnum = 6 And B_halat[i] = 0 Then
+        For j = 1 To 4
+           If Shapes.GetLeft(Bluemohre[j]) = xmahal[2]+5 and Shapes.GetTop(Bluemohre[j]) = ymahal[2]+5 then  
+            Goto eror
+           EndIf
+         EndFor
+         Shapes.Animate(Bluemohre[i],xmahal[2]+5,ymahal[2]+5,500)
+          B_halat[i] = 1 
+          B_c[i] = 2
+        EndIf
+          If B_halat[i] = 0 and tasnum <> 6 then
+          Goto End
+        EndIf
+    EndIf
+  EndFor
+  If 1 = 2 Then
+    eror :
+    B_d[i] = B_d[i] - tasnum
+    B_c[i] = B_c[i] - tasnum
+    If B_c[i] < 1 Then
+      B_c[i] = B_c[i] + 48
+      B_dor[i] = 0
+    EndIf
+    Goto End
+  EndIf
+  'tasnum = 0
+  End :
+EndSub
+
+
+
+'REDS MOVING
+For i = 1 To 4
+  R_halat[i] = 0
+endfor
+
+Sub redmoving
+  For i = 1 To 4
+    x[i] = Shapes.GetLeft(redmohre[i])
+    y[i] = Shapes.GetTop(redmohre[i])
+  EndFor
+  xm = GraphicsWindow.MouseX
+  ym = GraphicsWindow.MouseY
+  For i = 1 To 4
+    If xm >= x[i] And xm <= x[i]+40 And ym >= y[i] And ym <= y[i]+40 Then
+      If R_halat[i] = 1 Then
+        R_c[i] = R_c[i] + tasnum
+        If R_c[i] >= 49 then
+          R_c[i] = R_c[i] - 48
+          R_nimdor[i] = 1
+        EndIf
+        If R_nimdor[i] = 1 and R_c[i] > 13 then
+          R_dor[i] = 1
+        EndIf
+        If R_dor[i] = 1 then
+        If R_c[i] <= 17 then
+          R_d[i] = R_c[i] + 39
+          For j = 1 To 4
+            If Shapes.GetLeft(redmohre[j]) = xmahal[R_d[i]]+5 and Shapes.GetTop(redmohre[j]) = ymahal[R_d[i]]+5 then 
+             Goto R_eror
+            EndIf
+          EndFor
+         Shapes.Animate(redmohre[i],xmahal[R_d[i]]+5,ymahal[R_d[i]]+5,500) 
+        Else
+          Goto R_eror
+        EndIf
+        Goto R_End
+      EndIf
+          For j = 1 To 4
+            If Shapes.GetLeft(redmohre[j]) = xmahal[R_c[i]]+5 and Shapes.GetTop(redmohre[j]) = ymahal[R_c[i]]+5 then 
+             Goto R_eror
+            EndIf
+          EndFor
+         Shapes.Animate(redmohre[i],xmahal[R_c[i]]+5,ymahal[R_c[i]]+5,500) 
+      EndIf
+      If tasnum = 6 And R_halat[i] = 0 Then
+        For j = 1 To 4
+           If Shapes.GetLeft(redmohre[j]) = xmahal[14]+5 and Shapes.GetTop(redmohre[j]) = ymahal[14]+5 then  
+            Goto R_eror
+           EndIf
+         EndFor
+         Shapes.Animate(redmohre[i],xmahal[14]+5,ymahal[14]+5,500)
+          R_halat[i] = 1 
+          R_c[i] = 14
+        EndIf
+          If R_halat[i] = 0 and tasnum <> 6 then
+          Goto R_End
+        EndIf
+    EndIf
+  EndFor
+  If 1 = 2 Then
+    R_eror :
+    R_d[i] = R_d[i] - tasnum
+    R_c[i] = R_c[i] - tasnum
+    if R_c[i] < 14 Then
+      R_dor[i] = 0
+    EndIf
+    If R_c[i] < 1 Then
+      R_c[i] = R_c[i] + 48
+      R_nimdor[i] = 0
+    EndIf
+    Goto R_End
+  EndIf
+  'tasnum = 0
+  R_End :
+EndSub
+
+
+
+'YELLOWS MOVING
+For i = 1 to 4
+  Y_halat[i] = 0
+endfor
+
+Sub yellowmoving
+  For i = 1 To 4
+    x[i] = Shapes.GetLeft(yellowmohre[i])
+    y[i] = Shapes.GetTop(yellowmohre[i])
+  EndFor
+  xm = GraphicsWindow.MouseX
+  ym = GraphicsWindow.MouseY
+  For i = 1 To 4
+    If xm >= x[i] And xm <= x[i]+40 And ym >= y[i] And ym <= y[i]+40 Then
+      If Y_halat[i] = 1 Then
+        Y_c[i] = Y_c[i] + tasnum
+        If Y_c[i] >= 49 then
+          Y_c[i] = Y_c[i] - 48
+          Y_nimdor[i] = 1
+        EndIf
+        If Y_nimdor[i] = 1 and Y_c[i] > 25 then
+          Y_dor[i] = 1
+        EndIf
+        If Y_dor[i] = 1 then
+        If Y_c[i] <= 29 then
+          Y_d[i] = Y_c[i] + 31
+          For j = 1 To 4
+            If Shapes.GetLeft(yellowmohre[j]) = xmahal[Y_d[i]]+5 and Shapes.GetTop(yellowmohre[j]) = ymahal[Y_d[i]]+5 then 
+             Goto Y_eror
+            EndIf
+          EndFor
+         Shapes.Animate(yellowmohre[i],xmahal[Y_d[i]]+5,ymahal[Y_d[i]]+5,500) 
+        Else
+          Goto Y_eror
+        EndIf
+        Goto Y_End
+      EndIf
+          For j = 1 To 4
+            If Shapes.GetLeft(yellowmohre[j]) = xmahal[Y_c[i]]+5 and Shapes.GetTop(yellowmohre[j]) = ymahal[Y_c[i]]+5 then 
+             Goto Y_eror
+            EndIf
+          EndFor
+         Shapes.Animate(yellowmohre[i],xmahal[Y_c[i]]+5,ymahal[Y_c[i]]+5,500) 
+      EndIf
+      If tasnum = 6 And Y_halat[i] = 0 Then
+        For j = 1 To 4
+           If Shapes.GetLeft(yellowmohre[j]) = xmahal[26]+5 and Shapes.GetTop(yellowmohre[j]) = ymahal[26]+5 then  
+            Goto Y_eror
+           EndIf
+         EndFor
+         Shapes.Animate(yellowmohre[i],xmahal[26]+5,ymahal[26]+5,500)
+          Y_halat[i] = 1 
+          Y_c[i] = 26
+        EndIf
+          If Y_halat[i] = 0 and tasnum <> 6 then
+          Goto Y_End
+        EndIf
+    EndIf
+  EndFor
+  If 1 = 2 Then
+    Y_eror :
+    Y_d[i] = Y_d[i] - tasnum
+    Y_c[i] = Y_c[i] - tasnum
+    if Y_c[i] < 26 Then
+      Y_dor[i] = 0
+    EndIf
+    If Y_c[i] < 1 Then
+      Y_c[i] = Y_c[i] + 48
+      Y_nimdor[i] = 0
+    EndIf
+    Goto Y_End
+  EndIf
+  'tasnum = 0
+  Y_End :
+EndSub
+
+
+'GREENS MOVING
+For i = 1 to 4
+  G_halat[i] = 0
+endfor
+
+Sub greenmoving
+  For i = 1 To 4
+    x[i] = Shapes.GetLeft(greenmohre[i])
+    y[i] = Shapes.GetTop(greenmohre[i])
+  EndFor
+  xm = GraphicsWindow.MouseX
+  ym = GraphicsWindow.MouseY
+  For i = 1 To 4
+    If xm >= x[i] And xm <= x[i]+40 And ym >= y[i] And ym <= y[i]+40 Then
+      If G_halat[i] = 1 Then
+        G_c[i] = G_c[i] + tasnum
+        If G_c[i] >= 49 then
+          G_c[i] = G_c[i] - 48
+          G_nimdor[i] = 1
+        EndIf
+        If G_nimdor[i] = 1 and G_c[i] > 37 then
+          G_dor[i] = 1
+        EndIf
+        If G_dor[i] = 1 then
+        If G_c[i] <= 41 then
+          G_d[i] = G_c[i] + 23
+          For j = 1 To 4
+            If Shapes.GetLeft(greenmohre[j]) = xmahal[G_d[i]]+5 and Shapes.GetTop(greenmohre[j]) = ymahal[G_d[i]]+5 then 
+             Goto G_eror
+            EndIf
+          EndFor
+         Shapes.Animate(greenmohre[i],xmahal[G_d[i]]+5,ymahal[G_d[i]]+5,500) 
+        Else
+          Goto G_eror
+        EndIf
+        Goto G_End
+      EndIf
+          For j = 1 To 4
+            If Shapes.GetLeft(greenmohre[j]) = xmahal[G_c[i]]+5 and Shapes.GetTop(greenmohre[j]) = ymahal[G_c[i]]+5 then 
+             Goto G_eror
+            EndIf
+          EndFor
+         Shapes.Animate(greenmohre[i],xmahal[G_c[i]]+5,ymahal[G_c[i]]+5,500) 
+      EndIf
+      If tasnum = 6 And G_halat[i] = 0 Then
+        For j = 1 To 4
+           If Shapes.GetLeft(greenmohre[j]) = xmahal[38]+5 and Shapes.GetTop(greenmohre[j]) = ymahal[138]+5 then  
+            Goto G_eror
+           EndIf
+         EndFor
+         Shapes.Animate(greenmohre[i],xmahal[38]+5,ymahal[38]+5,500)
+          G_halat[i] = 1 
+          G_c[i] = 38
+        EndIf
+          If G_halat[i] = 0 and tasnum <> 6 then
+          Goto G_End
+        EndIf
+    EndIf
+  EndFor
+  If 1 = 2 Then
+    G_eror :
+    G_d[i] = G_d[i] - tasnum
+    G_c[i] = G_c[i] - tasnum
+    if G_c[i] < 38 Then
+      G_dor[i] = 0
+    EndIf
+    If G_c[i] < 1 Then
+      G_c[i] = G_c[i] + 48
+      G_nimdor[i] = 0
+    EndIf
+    Goto G_End
+  EndIf
+  'tasnum = 0
+  G_End :
+EndSub
+
+
+'SET TAS NUMBER
+Sub settasnumber
+  Shapes.SetText(adad,"")
+  tasnum = Math.GetRandomNumber(6)
+  For i = 1 To 360
+    Program.Delay(1)
+    Shapes.Rotate(Tas,1*i)
+  EndFor
+  Shapes.SetText(adad,tasnum)
+EndSub
+
+
+'NOBAT
+nobat = 0
+
+Sub setnobat
+  nobat = nobat + 1
+  If (nobat = 5) Then
+    nobat = 1
+  EndIf
+EndSub
+
+
+
+'SHOW STATUS
+
+Sub showstatus
+  If nobat = 1 Then
+    status = "It is blue's turn"
+  ElseIf nobat = 2 then
+    status = "It is red's turn"
+  ElseIf nobat = 3 then
+    status = "It is yellow's turn"
+  Else
+    status = "It is green's turn"
+  EndIf
+  Shapes.SetText(statustxt,status)
+EndSub
+
+
+'CHECK WINER
+chand = 1
+
+Sub checkwiner
+  If chand = 1 Then
+    chandom = "1st"
+    y = 50
+  ElseIf chand = 2 then
+    chandom = "2nd"
+    y = 100
+  ElseIf chand = 3 then
+    chandom = "3th"
+    y = 150
+  else
+    chandom = "4th"
+    y = 200
+  Endif
+  If Bluedeath <> 1 Then
+    If B_d[1] + B_d[2] + B_d[3] + B_d[4] = 202 Then
+      GraphicsWindow.BrushColor = "blue"
+      GraphicsWindow.FontSize = 20
+      winertxt[1] = Shapes.AddText("Blue is " + chandom)
+      Shapes.Move(winertxt[1],50,y)
+      chand = chand + 1
+      Bluedeath = 1
+    EndIf
+  EndIf
+  If reddeath <> 1 Then
+    If R_d[1] + R_d[2] + R_d[3] + R_d[4] = 218 Then
+      GraphicsWindow.BrushColor = "red"
+      GraphicsWindow.FontSize = 20
+      winertxt[2] = Shapes.AddText("Red is " + chandom)
+      Shapes.Move(winertxt[2],50,y)
+      chand = chand + 1
+      reddeath = 1
+    EndIf
+  EndIf
+  If yellowdeath <> 1 Then
+    If Y_d[1] + Y_d[2] + Y_d[3] + Y_d[4] = 234 Then
+      GraphicsWindow.BrushColor = "yellow"
+      GraphicsWindow.FontSize = 20
+      winertxt[3] = Shapes.AddText("Yellow is " + chandom)
+      Shapes.Move(winertxt[3],50,y)
+      chand = chand + 1
+      yellowdeath = 1
+    EndIf
+  EndIf
+  If greendeath <> 1 Then
+    If G_d[1] + G_d[2] + G_d[3] + G_d[4] = 250 Then
+      GraphicsWindow.BrushColor = "lime"
+      GraphicsWindow.FontSize = 20
+      winertxt[4] = Shapes.AddText("Green is " + chandom)
+      Shapes.Move(winertxt[4],50,y)
+      chand = chand + 1
+      greendeath = 1
+    EndIf
+  EndIf
+EndSub
+
+
+
+'HIT 
+
+Sub hit
+  For i = 1 To 4
+    For j = 1 To 4
+      If B_c[i] = R_c[j] Then
+        If nobat = 1 Then
+         If R_dor[j] <> 1 Then
+            Shapes.Animate(redmohre[j],R_Xavalie[j],R_Yavalie[j],500)
+            R_nimdor[j] = 0
+            R_c[j] = 0
+            R_halat[j] = 0
+          EndIf
+        Else
+          if B_dor[i] <> 1 Then
+            Shapes.Animate(Bluemohre[i],B_Xavalie[i],B_Yavalie[i],500)
+            B_c[i] = 0
+            B_halat[i] = 0
+          EndIf
+        EndIf
+      EndIf
+    EndFor
+  EndFor
+  For i = 1 To 4
+    For j = 1 To 4
+      If B_c[i] = Y_c[j] Then
+        If nobat = 1 Then
+          If Y_dor[j] <> 1 Then
+            Shapes.Animate(yellowmohre[j],Y_Xavalie[j],Y_Yavalie[j],500)
+            Y_nimdor[j] = 0
+            Y_c[j] = 0
+            Y_halat[j] = 0
+          EndIf
+        Else
+          if B_dor[i] <> 1 Then
+            Shapes.Animate(Bluemohre[i],B_Xavalie[i],B_Yavalie[i],500)
+            B_c[i] = 0
+            B_halat[i] = 0
+          EndIf
+        EndIf
+      EndIf
+    EndFor
+  EndFor
+  For i = 1 To 4
+    For j = 1 To 4
+      If B_c[i] = G_c[j] Then
+        If nobat = 1 Then
+          If G_dor[j] <> 1 Then
+            Shapes.Animate(greenmohre[j],G_Xavalie[j],G_Yavalie[j],500)
+            G_nimdor[j] = 0
+            G_c[j] = 0
+            G_halat[j] = 0
+          EndIf
+        Else
+          if B_dor[i] <> 1 Then
+            Shapes.Animate(Bluemohre[i],B_Xavalie[i],B_Yavalie[i],500)
+            B_c[i] = 0
+            B_halat[i] = 0
+          EndIf
+        EndIf
+      EndIf
+    EndFor
+  EndFor
+  For i = 1 To 4
+    For j = 1 To 4
+      If R_c[i] = Y_c[j] Then
+        If nobat = 2 Then
+          If Y_dor[j] <> 1 Then
+            Shapes.Animate(yellowmohre[j],Y_Xavalie[j],Y_Yavalie[j],500)
+            Y_nimdor[j] = 0
+            Y_c[j] = 0
+            Y_halat[j] = 0
+          EndIf
+        Else
+          if R_dor[i] <> 1 Then
+            Shapes.Animate(redmohre[i],R_Xavalie[i],R_Yavalie[i],500)
+            R_nimdor[i] = 0
+            R_c[i] = 0
+            R_halat[i] = 0
+          EndIf
+        EndIf
+      EndIf
+    EndFor
+  EndFor
+  For i = 1 To 4
+    For j = 1 To 4
+      If R_c[i] = G_c[j] Then
+        If nobat = 2 Then
+          If G_dor[j] <> 1 Then
+            Shapes.Animate(greenmohre[j],G_Xavalie[j],G_Yavalie[j],500)
+            G_nimdor[j] = 0
+            G_c[j] = 0
+            G_halat[j] = 0
+          EndIf
+        Else
+          if R_dor[i] <> 1 Then
+            Shapes.Animate(redmohre[i],R_Xavalie[i],R_Yavalie[i],500)
+            R_nimdor[i] = 0
+            R_c[i] = 0
+            R_halat[i] = 0
+          EndIf
+        EndIf
+      EndIf
+    EndFor
+  EndFor
+  For i = 1 To 4
+    For j = 1 To 4
+      If Y_c[i] = G_c[j] Then
+        If nobat = 3 Then
+          If G_dor[j] <> 1 Then
+            Shapes.Animate(greenmohre[j],G_Xavalie[j],G_Yavalie[j],500)
+            G_nimdor[j] = 0
+            G_c[j] = 0
+            G_halat[j] = 0
+          EndIf
+        Else
+          if Y_dor[i] <> 1 Then
+            Shapes.Animate(yellowmohre[i],Y_Xavalie[i],Y_Yavalie[i],500)
+            Y_nimdor[i] = 0
+            Y_c[i] = 0
+            Y_halat[i] = 0
+          EndIf
+        EndIf
+      EndIf
+    EndFor
+  EndFor
+EndSub
+  
