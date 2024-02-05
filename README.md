@@ -47,7 +47,7 @@ This program takes a number and randomly turns the same number of pixels in the 
 </div>
 <br>
 
-[Here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20codes%20with%20pixels/prog11-5.sb) is the source code.
+The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20codes%20with%20pixels/prog11-5.sb).
 
 ## Rotating Shapes With Turtle
 This program takes two numbers, the first is the number of repetitions of the shape and the second is the number of sides of the shape.
@@ -60,7 +60,7 @@ This program takes two numbers, the first is the number of repetitions of the sh
 </div>
 <br>
 
-[Here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20meeting%20with%20the%20lovely%20turtle/prog12-4-4.sb) is the source code.
+The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20meeting%20with%20the%20lovely%20turtle/prog12-4-4.sb).
 
 ## Maze With Turtle
 This program takes a number and draws a maze based on it.
@@ -73,7 +73,7 @@ This program takes a number and draws a maze based on it.
 </div>
 <br>
 
-[Here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20meeting%20with%20the%20lovely%20turtle/prog13-2.sb) is the source code.
+The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20meeting%20with%20the%20lovely%20turtle/prog13-2.sb).
 
 ## Paper
 This program is like a sheet of paper that you can draw on with a pencil. The width of the pencil is changed with arrow up and arrow down, and its color is changed randomly with space.
@@ -83,18 +83,39 @@ This program is like a sheet of paper that you can draw on with a pencil. The wi
 </div>
 <br>
 
-[Here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20meeting%20with%20event/paper-2.sb) is the source code.
+The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20meeting%20with%20event/paper-2.sb).
 
 ## Paddle Games
 
 ### Single Paddle
-https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/paddle%20games/single%20paddle.sb
+Don't let the ball pass you by.
+
+<div align="center">
+<image width="90%" src="./readme utils/paddle/1.png"/>
+</div>
+<br>
+
+The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/paddle%20games/single%20paddle.sb).
 
 ### Double Paddle
-https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/paddle%20games/double%20paddle.sb
+Don't let the ball pass you, this time from both sides.
+
+<div align="center">
+<image width="90%" src="./readme utils/paddle/2.png"/>
+</div>
+<br>
+
+The source code id [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/paddle%20games/double%20paddle.sb).
 
 ### Paddle With Cheat
-https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/paddle%20games/paddle%20with%20cheat.sb
+You can increase the length of the paddle with left click and return it to the original state with right click.
+
+<div align="center">
+<image width="90%" src="./readme utils/paddle/3.png"/>
+</div>
+<br>
+
+The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/paddle%20games/paddle%20with%20cheat.sb).
 
 
 ## BMI Calculators
