@@ -22,7 +22,11 @@ This repository contains my first codes and programming training that i have don
 - [Mini Paint](#mini-paint)
 
 ## First Hello World
-https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20hello%20world/hello%20world.sb
+The first line of code I wrote.
+```
+TextWindow.WriteLine("HELLO , WORLD")
+```
+[Here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20hello%20world/hello%20world.sb) is the source.
 
 
 ## List of Divisor
