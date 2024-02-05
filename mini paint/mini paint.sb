@@ -1,0 +1,299 @@
+GraphicsWindow.Show()
+GraphicsWindow.FontSize = 20
+GraphicsWindow.PenWidth = 10
+GraphicsWindow.BrushColor = GraphicsWindow.GetColorFromRGB(111,111,111)
+GraphicsWindow.FillRectangle(0,0,400,740)
+GraphicsWindow.FillRectangle(0,740,1600,160)
+GraphicsWindow.DrawLine(400,0,400,740)
+GraphicsWindow.DrawLine(400,740,1600,740)
+GraphicsWindow.PenColor = "lime"
+GraphicsWindow.PenWidth = 2
+GraphicsWindow.DrawRectangle(95,295,300,200)
+GraphicsWindow.PenWidth = 10
+GraphicsWindow.PenColor = 1
+
+
+'BASE SHAPES,S
+GraphicsWindow.PenWidth = 4
+GraphicsWindow.BrushColor = "blue"
+i = Shapes.AddEllipse(50,50)
+Shapes.Move(i,200,10)
+i = Shapes.AddRectangle(50,50)
+Shapes.Move(i,250,80)
+i = Shapes.AddTriangle(245,150,220,195,270,195)
+Shapes.AddLine(170,225,220,275)
+Shapes.AddLine(220,225,170,275)
+For i = 1 To 4
+  If i = 1 Then
+    caption = "ELLIPSE"
+  ElseIf i = 2 then
+    caption = "RECTANGLE"
+  Elseif i = 3 then
+    caption = "TRIANGLE"
+  Else
+    caption = "LINE"
+  EndIf 
+  btn[i] = Controls.AddButton(caption,100,(i-1)*70+20)
+EndFor
+btn[6] = Controls.AddButton("PENCIL",20,550)
+btn[7] = Controls.AddButton("EARISER",150,550)
+
+GraphicsWindow.BrushColor = "black"
+i = Shapes.AddText("pen color")
+Shapes.Move(i,100,300)
+i = Shapes.AddText("pen width")
+Shapes.Move(i,100,350)
+i = Shapes.AddText("brush color")
+Shapes.Move(i,100,400)
+
+For i = 1 To 3
+  txt[i] = Controls.AddTextBox(230,250+(50*i))
+EndFor
+GraphicsWindow.BrushColor = "BLUE"
+btn[5] = Controls.AddButton("set status",100,450)
+GraphicsWindow.BrushColor = "1"
+
+ww = Shapes.AddText("mod is:")
+Shapes.Move(ww,100,800)
+
+
+Controls.ButtonClicked = BC
+GraphicsWindow.MouseDown = MD
+GraphicsWindow.MouseMove = MV
+
+marhale = 0
+Sub BC
+  If Controls.LastClickedButton = btn[1] Then
+    halat = "ellipse" 
+  EndIf
+  If Controls.LastClickedButton = btn[2] Then
+    halat = "rectangle"
+  EndIf
+  If Controls.LastClickedButton = btn[3] Then
+    halat = "triangle"
+  EndIf
+  If Controls.LastClickedButton = btn[4] Then
+    halat = "line"
+  EndIf
+  If Controls.LastClickedButton = btn[5] Then
+    setstatus()
+  EndIf
+  If Controls.LastClickedButton = btn[6] Then
+    halat = "pencile"
+  EndIf
+  If Controls.LastClickedButton = btn[7] Then
+    halat = "eariser"
+  EndIf
+  Shapes.SetText(ww,"mod is: " + halat)
+  marhale = 0
+EndSub
+
+
+Sub MD
+  If halat = "ellipse" Or halat = "rectangle" Then
+    ellipse()
+  EndIf
+  If halat = "triangle" Then
+    triangle()
+  EndIf
+  If halat = "line" Then
+    line()
+  EndIf
+  If Mouse.IsRightButtonDown Then
+    marhale = 0
+  EndIf
+EndSub
+
+
+Sub MV
+  If halat = "ellipse" Or halat = "rectangle" Then
+    Gellipse()
+  EndIf
+  If halat = "triangle" Then
+    Gtriangle()
+  EndIf
+  If halat = "line" Then
+    Gline()
+  EndIf
+EndSub
+
+
+'SET STATUS 
+Sub setstatus
+  For i = 1 To 3
+    tt[i] = Controls.GetTextBoxText(txt[i])
+  EndFor
+  GraphicsWindow.PenColor = tt[1]
+  GraphicsWindow.PenWidth = tt[2]
+  GraphicsWindow.BrushColor = tt[3]
+EndSub
+
+
+'ELLIPSE & RECTANGLE
+Sub ellipse
+  If (Mouse.IsLeftButtonDown) And (marhale = 1) Then
+    x2 = GraphicsWindow.MouseX
+    y2 = GraphicsWindow.MouseY
+    marhale = 2
+  EndIf
+  If (Mouse.IsLeftButtonDown) And (marhale = 0) Then
+    x1 = GraphicsWindow.MouseX
+    y1 = GraphicsWindow.MouseY
+    marhale = 1
+  EndIf
+  If marhale = 2 Then
+    If halat = "ellipse" Then
+      shekl = Shapes.AddEllipse(math.Abs(x2-x1),math.Abs(y2-y1))
+    ElseIf halat = "rectangle" then
+      shekl = Shapes.AddRectangle(math.Abs(x2-x1),math.Abs(y2-y1))
+    EndIf
+    If x1 > x2 Then
+      x = x2
+    Else
+      x = x1
+    EndIf
+    If y1 > y2 Then
+      y = y2 
+    Else
+      y = y1
+    EndIf
+    Shapes.Move(shekl,x,y)
+    marhale = 0
+  EndIf
+EndSub
+
+
+Sub Gellipse
+  Shapes.Remove(g)
+  If marhale = 1 Then
+    x3 = GraphicsWindow.MouseX
+    y3 = GraphicsWindow.MouseY
+      g = Shapes.AddEllipse(Math.Abs(x1-x3),Math.Abs(y3-y1))
+    If y1 > y3 Then
+      y = y3 
+    Else
+      y = y1 
+    EndIf
+    If x1 >x3 Then
+      x = x3 
+    Else
+      x = x1 
+    EndIf
+    Shapes.Move(g,x,y)
+  EndIf
+EndSub
+
+
+'TRIANGLE
+Sub Gtriangle
+  Shapes.Remove(g)
+  If marhale = 1 Then
+    Xm = GraphicsWindow.MouseX
+    Ym = GraphicsWindow.MouseY
+    If Xm > x1 Then
+      s = -3
+    Else
+      s = 3
+    EndIf
+    If Ym > y1 Then
+      q = -3
+    Else
+      q = 3
+    EndIf 
+    g = Shapes.AddLine(x1,y1,Xm+q,Ym+q)
+  EndIf
+  If marhale = 2 Then
+    Xm = GraphicsWindow.MouseX
+    Ym = GraphicsWindow.MouseY
+    If Xm > x1 And Xm > x2 Then
+      s = -10 
+    ElseIf Xm < x1 and Xm < x2 then
+      s = 10
+    ElseIf ym > y1 and ym < y2 or ym < y1 and ym > y2 then
+      If Xm > x1+((x2-x1)/2) then
+        s = -10
+      Else
+        s = 10
+      EndIf
+    Else
+      s = 0
+    EndIf 
+    If Ym > y1 And Ym > y2 Then
+      q = -10 
+    ElseIf Ym < y1 and Ym < y2 then
+      q = 10
+    ElseIf Xm > x1 and Xm < x2 or Xm < x1 and Xm > x2 then
+      If Ym > y1+((y2-y1)/2) then 
+        q = -10
+      Else
+        q = 10
+      EndIf
+    Else
+      q = 0
+    EndIf 
+    g = Shapes.AddTriangle(x1,y1,x2,y2,Xm+s,Ym+q)
+  EndIf
+EndSub
+
+
+Sub triangle
+  If marhale = 2 And Mouse.IsLeftButtonDown Then
+    x3 = GraphicsWindow.MouseX
+    y3 = GraphicsWindow.MouseY
+    marhale = 3
+  EndIf 
+  If marhale = 1 And Mouse.IsLeftButtonDown Then
+    x2 = GraphicsWindow.MouseX
+    y2 = GraphicsWindow.MouseY
+    marhale = 2
+  EndIf
+  If marhale = 0 And Mouse.IsLeftButtonDown Then
+    x1 = GraphicsWindow.MouseX
+    y1 = GraphicsWindow.MouseY
+    marhale = 1
+  EndIf
+  If marhale = 3 Then
+    Shapes.AddTriangle(x1,y1,x2,y2,x3+s,y3+q)
+    marhale = 0
+  EndIf
+EndSub
+
+
+'LINE
+Sub Gline
+   Shapes.Remove(g)
+  If marhale = 1 Then
+    Xm = GraphicsWindow.MouseX
+    Ym = GraphicsWindow.MouseY
+    If Xm > x1 Then
+      s = -3
+    Else
+      s = 3
+    EndIf
+    If Ym > y1 Then
+      q = -3
+    Else
+      q = 3
+    EndIf 
+    g = Shapes.AddLine(x1,y1,Xm+q,Ym+q)
+  EndIf
+EndSub
+
+
+Sub line
+  If marhale = 1 And Mouse.IsLeftButtonDown Then
+    x2 = GraphicsWindow.MouseX
+    y2 = GraphicsWindow.MouseY
+    marhale = 2
+  EndIf
+  If marhale = 0 And Mouse.IsLeftButtonDown Then
+    x1 = GraphicsWindow.MouseX
+    y1 = GraphicsWindow.MouseY
+    marhale = 1 
+  EndIf
+  If marhale = 2 Then
+    Shapes.AddLine(x1,y1,x2+q,y2+q)
+    marhale = 0
+  EndIf
+EndSub
+
