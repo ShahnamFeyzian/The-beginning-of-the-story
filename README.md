@@ -86,15 +86,11 @@ https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/point%20%
 ## Mini Paint
 https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/mini%20paint/mini%20paint.sb
 
+
 ---
 
-<div style="
-text-align: center;
-font-weight: bolder;
-font-size: 35px;
-font-family: Cursive;
-">
-<< بماند به یادگار >>
+<div align="center">
+    <img src="./readme utils/outro.svg">
 </div>
 
 ---
