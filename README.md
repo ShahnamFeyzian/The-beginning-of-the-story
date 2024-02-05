@@ -45,6 +45,7 @@ This program takes a number and randomly turns the same number of pixels in the 
 <image width="45%" src="./readme utils/sierpinski triangle/2.png"/>
 <image width="45%" src="./readme utils/sierpinski triangle/3.png"/>
 </div>
+<br>
 
 [Here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20codes%20with%20pixels/prog11-5.sb) is the source code.
 
@@ -57,6 +58,7 @@ This program takes two numbers, the first is the number of repetitions of the sh
 <image width="45%" src="./readme utils/repeated shapes/3.png"/>
 <image width="45%" src="./readme utils/repeated shapes/4.png"/>
 </div>
+<br>
 
 [Here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20meeting%20with%20the%20lovely%20turtle/prog12-4-4.sb) is the source code.
 
@@ -69,11 +71,19 @@ This program takes a number and draws a maze based on it.
 <image width="45%" src="./readme utils/maze/3.png"/>
 <image width="45%" src="./readme utils/maze/4.png"/>
 </div>
+<br>
 
 [Here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20meeting%20with%20the%20lovely%20turtle/prog13-2.sb) is the source code.
 
 ## Paper
-https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20meeting%20with%20event/paper-1.sb
+This program is like a sheet of paper that you can draw on with a pencil. The width of the pencil is changed with arrow up and arrow down, and its color is changed randomly with space.
+
+<div align="center">
+<image width="90%" src="./readme utils/paper/1.png"/>
+</div>
+<br>
+
+[Here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20meeting%20with%20event/paper-2.sb) is the source code.
 
 ## Paddle Games
 
