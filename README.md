@@ -32,14 +32,21 @@ TextWindow.WriteLine("HELLO , WORLD")
 ## List of Divisor
 This was my first program that actually did something useful.
 <div align="center">
-<image src="./readme utils/divisors/1.png" width="90%"/>
+<image width="90%" src="./readme utils/divisors/1.png"/>
 </div>
 <br>
 
 [Here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20for%20statements/prog6-4.sb) is the source code.
 
 ## Sierpinski Triangle
-https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20codes%20with%20pixels/prog11-5.sb
+This program takes a number and randomly turns the same number of pixels in the allowed areas yellow.
+<div align="center">
+<image width="45%" src="./readme utils/sierpinski triangle/1.png"/>
+<image width="45%" src="./readme utils/sierpinski triangle/2.png"/>
+<image width="45%" src="./readme utils/sierpinski triangle/3.png"/>
+</div>
+
+[Here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20codes%20with%20pixels/prog11-5.sb) is the source code.
 
 ## Rotating Shapes With Turtle
 https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/first%20meeting%20with%20the%20lovely%20turtle/prog12-4-4.sb
