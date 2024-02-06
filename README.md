@@ -14,7 +14,7 @@ This repository contains my first codes and programming training that i have don
 - [Paddle Games](#paddle-games)
 - [BMI Calculator](#bmi-calculator)
 - [Tic Tac Toe](#tic-tac-toe)
-- [Calculators](#calculators)
+- [Calculator](#calculator)
 - [Eye](#eye)
 - [Dooz Game](#dooz-game)
 - [Ludo Game](#ludo-game)
@@ -140,15 +140,19 @@ Traditional tic tac toe game.
 </div>
 <br>
 
-The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/tic%20toc%20toe%20game/tic%20toc%20toe.sb).
+The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/tic%20tac%20toe%20game/tic%20tac%20toe.sb).
 
-## Calculators
+## Calculator
+Graphical calculator with many bugs :)
 
-### Minimal Calculator
-https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/calculators/calculator-full.sb
+<div align="center">
+<image width="30%" src="./readme utils/calculator/1.png"/>
+<image width="30%" src="./readme utils/calculator/2.png"/>
+<image width="30%" src="./readme utils/calculator/3.png"/>
+</div>
+<br>
 
-### Graphical Calculator
-https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/calculators/calculator-graphical.sb
+The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/calculators/calculator-graphical.sb).
 
 ## Eye
 https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/eye/eye%20drawer.sb
