@@ -155,7 +155,17 @@ Graphical calculator with many bugs :)
 The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/calculators/calculator-graphical.sb).
 
 ## Eye
-https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/eye/eye%20drawer.sb
+This program takes a number and draws an eye with the same number of lines. The bigger the better.
+
+<div align="center">
+<image width="45%" src="./readme utils/eye/1.png"/>
+<image width="45%" src="./readme utils/eye/2.png"/>
+<image width="45%" src="./readme utils/eye/3.png"/>
+<image width="45%" src="./readme utils/eye/4.png"/>
+</div>
+<br>
+
+The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/eye/eye%20drawer.sb).
 
 ## Dooz Game
 https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/dooz%20game/dooz.sb
