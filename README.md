@@ -194,7 +194,16 @@ Although it has bugs, it is playable.
 The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/ludo%20game/ludo.sb).
 
 ## Point & Line Game
-https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/point%20%26%20line%20game/point%20and%20line.sb
+In this game you have to try to form a square and at the same time don't let your enemy form a square.
+
+<div align="center">
+<image width="30%" src="./readme utils/point and line/1.png"/>
+<image width="30%" src="./readme utils/point and line/2.png"/>
+<image width="30%" src="./readme utils/point and line/3.png"/>
+</div>
+<br>
+
+The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/point%20%26%20line%20game/point%20and%20line.sb).
 
 ## Mini Paint
 https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/mini%20paint/mini%20paint.sb
