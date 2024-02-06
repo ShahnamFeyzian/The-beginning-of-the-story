@@ -206,7 +206,16 @@ In this game you have to try to form a square and at the same time don't let you
 The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/point%20%26%20line%20game/point%20and%20line.sb).
 
 ## Mini Paint
-https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/mini%20paint/mini%20paint.sb
+This is a mini-paint with which you can draw a few shapes.
+Drawing is canceled by right click.
+Eraser and pencil unfortunately do not work.
+
+<div align="center">
+<image width="90%" src="./readme utils/mini paint/1.png"/>
+</div>
+<br>
+
+The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/mini%20paint/mini%20paint.sb).
 
 
 ---
