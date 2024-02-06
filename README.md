@@ -181,7 +181,17 @@ I'm not sure if the rules of the game are exactly what I implemented, but it's f
 The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/dooz%20game/dooz.sb).
 
 ## Ludo Game
-https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/ludo%20game/ludo.sb
+Although it has bugs, it is playable.
+
+<div align="center">
+<image width="45%" src="./readme utils/ludo/2.png"/>
+<image width="45%" src="./readme utils/ludo/3.png"/>
+<image width="45%" src="./readme utils/ludo/4.png"/>
+<image width="45%" src="./readme utils/ludo/5.png"/>
+</div>
+<br>
+
+The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/ludo%20game/ludo.sb).
 
 ## Point & Line Game
 https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/point%20%26%20line%20game/point%20and%20line.sb
