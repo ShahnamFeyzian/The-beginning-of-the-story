@@ -168,7 +168,17 @@ This program takes a number and draws an eye with the same number of lines. The 
 The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/eye/eye%20drawer.sb).
 
 ## Dooz Game
-https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/dooz%20game/dooz.sb
+I'm not sure if the rules of the game are exactly what I implemented, but it's fun.
+
+<div align="center">
+<image width="45%" src="./readme utils/dooz/1.png"/>
+<image width="45%" src="./readme utils/dooz/2.png"/>
+<image width="45%" src="./readme utils/dooz/3.png"/>
+<image width="45%" src="./readme utils/dooz/4.png"/>
+</div>
+<br>
+
+The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/dooz%20game/dooz.sb).
 
 ## Ludo Game
 https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/ludo%20game/ludo.sb
