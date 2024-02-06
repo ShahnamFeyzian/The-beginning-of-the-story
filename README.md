@@ -12,8 +12,8 @@ This repository contains my first codes and programming training that i have don
 - [Maze With Turtle](#maze-with-turtle)
 - [Paper](#paper)
 - [Paddle Games](#paddle-games)
-- [BMI Calculators](#bmi-calculators)
-- [Tic Toc Toe](#tic-toc-toe)
+- [BMI Calculator](#bmi-calculator)
+- [Tic Tac Toe](#tic-tac-toe)
 - [Calculators](#calculators)
 - [Eye](#eye)
 - [Dooz Game](#dooz-game)
@@ -118,7 +118,7 @@ You can increase the length of the paddle with left click and return it to the o
 The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/paddle%20games/paddle%20with%20cheat.sb).
 
 
-## BMI Calculators
+## BMI Calculator
 Enter your weight and height and your BMI will be calculated, your weight status and ideal weight will also be reported.
 
 <div align="center">
@@ -130,8 +130,17 @@ Enter your weight and height and your BMI will be calculated, your weight status
 
 The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/BMI%20calculator/BMI-graphical.sb).
 
-## Tic Toc Toe
-https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/tic%20toc%20toe%20game/tic%20toc%20toe.sb
+## Tic Tac Toe
+Traditional tic tac toe game.
+
+<div align="center">
+<image width="30%" src="./readme utils/tic tac toe/1.png"/>
+<image width="30%" src="./readme utils/tic tac toe/2.png"/>
+<image width="30%" src="./readme utils/tic tac toe/3.png"/>
+</div>
+<br>
+
+The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/tic%20toc%20toe%20game/tic%20toc%20toe.sb).
 
 ## Calculators
 

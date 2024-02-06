@@ -1,5 +1,5 @@
 GraphicsWindow.CanResize = 0
-GraphicsWindow.Title = "tic-toc-toe"
+GraphicsWindow.Title = "tic-tac-toe"
 GraphicsWindow.Width = 300
 GraphicsWindow.Height = 400
 GraphicsWindow.PenWidth = 9
