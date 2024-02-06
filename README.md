@@ -119,12 +119,16 @@ The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the
 
 
 ## BMI Calculators
+Enter your weight and height and your BMI will be calculated, your weight status and ideal weight will also be reported.
 
-### Graphical BMI Calculator
-https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/BMI%20calculator/BMI-graphical.sb
+<div align="center">
+<image width="30%" src="./readme utils/BMI/1.png"/>
+<image width="30%" src="./readme utils/BMI/2.png"/>
+<image width="30%" src="./readme utils/BMI/3.png"/>
+</div>
+<br>
 
-### Command Line BMI Calculator
-https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/BMI%20calculator/BMI-cli.sb
+The source code is [here](https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/BMI%20calculator/BMI-graphical.sb).
 
 ## Tic Toc Toe
 https://github.com/ShahnamFeyzian/The-beginning-of-the-story/blob/main/tic%20toc%20toe%20game/tic%20toc%20toe.sb
