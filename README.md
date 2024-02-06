@@ -41,9 +41,9 @@ This was my first program that actually did something useful.
 ## Sierpinski Triangle
 This program takes a number and randomly turns the same number of pixels in the allowed areas yellow.
 <div align="center">
-<image width="45%" src="./readme utils/sierpinski triangle/1.png"/>
-<image width="45%" src="./readme utils/sierpinski triangle/2.png"/>
-<image width="45%" src="./readme utils/sierpinski triangle/3.png"/>
+<image width="30%" src="./readme utils/sierpinski triangle/1.png"/>
+<image width="30%" src="./readme utils/sierpinski triangle/2.png"/>
+<image width="30%" src="./readme utils/sierpinski triangle/3.png"/>
 </div>
 <br>
 
