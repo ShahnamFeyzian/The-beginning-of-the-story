@@ -269,7 +269,7 @@ Sub showstatus
   If winer = "" Then
     Shapes.SetText(status,"it is " + player + "'s turn")
   ElseIf winer = "draw" then
-    Shapes.SetText(status,"Do'nt hav any winer!")
+    Shapes.SetText(status,"Don't have any winer!")
     Sound.PlayChimes()
   Else
     Shapes.SetText(status,"Player " + winer + " wins")
